@@ -42,6 +42,7 @@ body{
   left: 50%;
   transform: translate(-50%, -300%);
 }
+
   .tv {
     margin-top: 250px;
     position: absolute;
@@ -53,7 +54,7 @@ body{
     background-color: black;
     overflow: hidden;
     border-radius: 2px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 20px rgba(11, 1, 1, 0.6);
   }
   
   .tv::before {
@@ -96,3 +97,15 @@ body{
     height: 2px;
     background-color: silver;
   }
+  #scoreDisplay {
+    margin: 105px;
+    width: 760px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #FFF;
+    z-index: 1;
+    text-shadow: 2px 2px 4px #000;
+    padding: 10px;
+    background-color: rgb(0, 0, 0,0.5);
+  }
+  
