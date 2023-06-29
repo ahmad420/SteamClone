@@ -113,7 +113,7 @@ class Pipe {
 const pipes = [];
 let frames = 0;
 let gameOver = false;
-
+let gameStarted = false;
 // Main game loop
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -145,11 +145,17 @@ function gameLoop() {
   frames++;
   requestAnimationFrame(gameLoop);
 }
-
+const startButton = document.getElementById("startButton");
 const resetButton = document.getElementById("resetButton");
 const gameOverMessage = document.getElementById("gameOver");
 const bgMusic = document.getElementById("bgMusic");
 
+function startGame() {
+  gameStarted = true;
+  startButton.style.display = "none";
+  playBackgroundMusic();
+  gameLoop();
+}
 // Reset the game
 function resetGame() {
   playBackgroundMusic();
@@ -162,27 +168,22 @@ function resetGame() {
   score = 0;
   scoreDisplay.textContent = `Score: ${score}`;
   gameOver = false;
-
-  gameLoop();
+  startGame();
 }
 
-// Event listeners
 function handleKeyDown(event) {
   if (event.code === "Space") {
     bird.flap();
   }
 }
-
 function handleMouseDown(event) {
   event.preventDefault();
   bird.flap();
 }
-
 // Play background music
 function playBackgroundMusic() {
   bgMusic.play();
 }
-
 // Stop background music
 function stopBackgroundMusic() {
   bgMusic.pause();
@@ -191,8 +192,5 @@ function stopBackgroundMusic() {
 
 document.addEventListener("keydown", handleKeyDown);
 document.addEventListener("mousedown", handleMouseDown);
-
+startButton.addEventListener("click", startGame);
 resetButton.addEventListener("click", resetGame);
-
-playBackgroundMusic();
-gameLoop();
