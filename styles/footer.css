@@ -59,4 +59,15 @@
     background-color: #305e99;
     border-color: #305e99;
   }
+  @media (max-width: 767px) {
+    .footer {
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer .footer-links {
+      margin-top: 20px;
+    }
+  }
   
