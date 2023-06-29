@@ -5,167 +5,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam Clone</title>
-    <link rel="stylesheet" type="text/css" href="./styles/navbar.css">
-    <link rel="stylesheet" type="text/css" href="./styles/main.css">
-    <script src="./JsScripts/main.js" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
+
 </head>
 
 <body>
-    <header>
-        <section class="navbar-container row">
-            <!-- main navbar section  -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><img src="images/steam.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <header class="jumbotron text-center">
+        <video autoplay muted loop id="video-bg">
+            <source src="images/stVed.mp4" type="video/mp4">
+        </video>
+        <div class="jumbotron-content">
 
-            <a class="logo-link" href="./index.html">
-                <img class="logo" src="./images/steam.png">
-            </a>
-
-            <nav class="main-navbar row">
-
-
-                <button class="dropdown-btn dropdown">
-                    <a href="#">STORE</a>
-                    <div class="content">
-                        <a href="#">Home</a>
-                        <a href="./pages/store.html">Store</a>
-                        <a href="./pages/news.html">News</a>
-                        <a href="./pages/catagories.html">Catagories</a>
-                    </div>
-                </button>
-
-                <button class="dropdown-btn dropdown">
-                    <a href="./pages/community.html">COMMUNITY</a>
-                    <div class="content">
-                        <a href="./pages/noteworthy.html">New & Noteworthy</a>
-                        <a href="./pages/pointshop.html">Point Shop</a>
-                        <a href="./pages/labs.html">Labs</a>
-                    </div>
-                </button>
-
-
-                <button><a href="./pages/about.html">ABOUT</a></button>
-
-
-                <button><a href="./pages/support.html">SUPPORT</a></button>
-            </nav>
-
-            <!-- navbar button  -->
-
-            <section class="navbar-btn row">
-                <button class="btn"><a href="./pages/login.html">Log in</a></button>
-                <hr>
-                <button class="btn"><a href="./pages/getstarted.html">Get started</a></button>
-            </section>
-        </section>
+        </div>
     </header>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <section>
 
-    <!--end main navbar section-->
-
-    <!--start  second navbar-->
-    <main>
-
-        <section class="second-navabar-container">
-            <nav class="sub-navbar row">
-
-                <button class="dropdown-btn dropdown">
-                    <a href="./pages/yourstore.html">Your Store</a>
-                    <div class="content">
-                        <a href="#">case</a>
-                        <a href="#">case</a>
-                        <a href="#">case</a>
+                    <div id="gamesCarousel" class="carousel slide mx-auto" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#gamesCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#gamesCarousel" data-slide-to="1"></li>
+                            <li data-target="#gamesCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner text-center">
+                            <div class="carousel-item active">
+                                <a href="category/action.html">
+                                    <img class="d-block mx-auto" src="images/action.jpg" alt="Action Games">
+                                </a>
+                                <div class="carousel-caption">
+                                    <h3>Action Games</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="category/adventure.html">
+                                    <img class="d-block mx-auto" src="images/adventure.jpg" alt="Adventure Games">
+                                </a>
+                                <div class="carousel-caption">
+                                    <h3>Adventure Games</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="category/racing.html">
+                                    <img class="d-block mx-auto" src="images/racing.jpg" alt="Racing Games">
+                                </a>
+                                <div class="carousel-caption">
+                                    <h3>Racing Games</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#gamesCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#gamesCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                </button>
+                </section>
+            </div>
+            <div>
+                <section>
 
-                <button class="dropdown-btn dropdown">
-                    <a href="./pages/noteworthy.html">New & Noteworthy</a>
-                    <div class="content">
-                        <a href="#">case</a>
-                        <a href="#">case</a>
-                        <a href="#">case</a>
+                    <p>Play Free Retro Online Games</p>
+                    <div class="games-list">
+                        <div class="game-card">
+                            <img src="images/action.jpg" alt="Game 1">
+                            <h3>Kingdom Quest</h3>
+                            <p>Join the adventure in this retro platformer and defeat the evil monsters to save the
+                                kingdom.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                        <div class="game-card">
+                            <img src="images/racing.jpg" alt="Game 2">
+                            <h3>Galactic Invaders</h3>
+                            <p>Take control of a spaceship and engage in an epic space battle against alien invaders in
+                                this classic arcade game.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                        <div class="game-card">
+                            <img src="images/adventure.jpg" alt="Game 3">
+                            <h3>Knight's Rescue</h3>
+                            <p> Play as a brave knight and embark on a quest to rescue the princess from the clutches of
+                                the wicked sorcerer.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                        <div class="game-card">
+                            <img src="images/adventure.jpg" alt="Game 4">
+                            <h3>Block Buster</h3>
+                            <p>Test your puzzle-solving skills in this challenging game where you need to arrange
+                                falling blocks to clear lines and score points.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                        <div class="game-card">
+                            <img src="images/racing.jpg" alt="Game 5">
+                            <h3>Shadow Ninja</h3>
+                            <p> Step into the shoes of a skilled ninja and navigate through dangerous obstacles while
+                                defeating enemies along the way.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
+                        <div class="game-card">
+                            <img src="images/adventure.jpg" alt="Game 6">
+                            <h3>Speed Racer</h3>
+                            <p>Immerse yourself in an exciting racing experience as you speed through different tracks
+                                and compete for the championship.</p>
+                            <a href="#" class="btn btn-primary">Play Now</a>
+                        </div>
                     </div>
-                </button>
-
-                <button class="dropdown-btn dropdown">
-                    <a href="./pages/catagories.html">Categories</a>
-                    <div class="content">
-                        <a href="#">case</a>
-                        <a href="#">case</a>
-                        <a href="#">case</a>
-                    </div>
-                </button>
-                </div>
-                <button><a href="./pages/pointshop.html">Points Shop</a></button>
-                <button><a href="./pages/news.html">News</a></button>
-                <button><a href="./pages/labs.html">Labs</a></button>
-            </nav>
-            <!-- search form  -->
-            <section class="search-btn">
-                <form class="search-form">
-                    <input class="input-field" type="text" placeholder="Search">
-                </form>
-            </section>
-        </section>
-        <p><span id="holder"></span><span class="blinking-cursor">|</span></p>
-        <!--end navbar-940*49-->
-        <div class="video-container">
-
-
-            <video src="./images/stVed.mp4" autoplay muted loop>
-                Your browser does not support the video tag.
-            </video>
+                </section>
+            </div>
         </div>
-    </main>
-    <!--foooter-->
-    <footer class="footer">
-        <section class="footer-sec1 col">
-            <p>Looking for recommendations?</p>
-            <span>Sign In to view personalized recommendations</span>
-            <a href="./pages/login.html" class="footer-btn">Sign in</a>
-            <span>Or <a href="./pages/signup.html">Sign Up</a> and join Steam for free</span>
-        </section>
-        <section class="footer-sec2 col">
-            <hr class="footer-hr">
-            <div class="footer-div1 row">
-                <img src="./images/steam.png" alt="">
-                <div class=" col">
-                    <p> quas pariatu quibusdam accusamus distinctio voluptate nostrum consequatur in, sint suscipi?</p>
-                    <div class="row">
-                        <a href="">link1</a>
-                        <hr class="link-hr">
-                        <a href="">link1</a>
-                        <hr class="link-hr">
-                        <a href="">link1</a>
-                        <hr class="link-hr">
-                        <a href="">link1</a>
-                        <hr class="link-hr">
-                        <a href="">link1</a>
-                    </div>
-                </div>
-                <img src="./images/steam.png" alt="">
-            </div>
-            <hr class="footer-hr">
-            <div class="footer-div2 row">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-                <hr class="link-hr">
-                <a href="">link1</a>
-            </div>
-        </section>
 
+        <div class="row">
+            <div class="col-lg-6">
+                <section>
+                    <!-- Section 3 content goes here -->
+                </section>
+            </div>
+            <div class="col-lg-6">
+                <section>
+                    <!-- Section 4 content goes here -->
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>Explore</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Follow</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Subscribe</h5>
+                    <p>Subscribe to our newsletter to get updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 My Website. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-    <!--end navbar-940*49-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

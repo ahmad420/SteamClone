@@ -1,0 +1,62 @@
+/* Custom styles for the navbar */
+.navbar {
+    background-color: #171a21;
+  }
+  
+  .navbar-brand {
+    color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #c6d4df;
+  }
+  
+  /* Custom styles for the footer */
+  .footer {
+    padding: 30px 0;
+  }
+  
+  .footer h5 {
+    color: #f5f5f5;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li a {
+    color: #c6d4df;
+  }
+  
+  .footer ul li a:hover {
+    color: #f5f5f5;
+  }
+  
+  .footer p {
+    color: #c6d4df;
+    margin-bottom: 15px;
+  }
+  
+  .footer input.form-control {
+    margin-bottom: 15px;
+  }
+  
+  .footer button.btn-primary {
+    background-color: #3a77cc;
+    border-color: #3a77cc;
+  }
+  
+  .footer button.btn-primary:hover {
+    background-color: #305e99;
+    border-color: #305e99;
+  }
+  

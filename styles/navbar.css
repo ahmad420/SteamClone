@@ -203,3 +203,43 @@ margin-left: 23%;
     display: flex;
     flex-direction: column;
   }
+  @media screen and (max-width: 600px) {
+    header {
+      height: auto;
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-container {
+      width: 100%;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  
+    .main-navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+  
+    .dropdown-btn {
+      padding: 5px 0;
+    }
+  
+    .dropdown .content {
+      position: static;
+      min-width: auto;
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+    }
+  
+    .navbar-btn {
+      margin-top: 20px;
+      justify-content: flex-start;
+    }
+  }
+  
