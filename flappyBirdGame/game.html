@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flappy Bird</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body style="display: flex; align-items: center; flex-direction: column;">
+    <div id="scoreDisplay" style=" color: green; font-size: 40px; margin: 20px;">Score: 0</div>
+
+    <div class="tv">
+        <img src="./images/gmovr.png" id="gameOver" style="display: none; width: 450px; z-index: 1;    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);" />
+
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <button id="resetButton" style="">Reset</button>
+
+
+    </div>
+    <audio id="bgMusic" src="./music/bg.mp3" loop></audio>
+    <script src="./game.js"></script>
+</body>
+
+</html>
