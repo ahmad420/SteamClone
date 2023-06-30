@@ -1,0 +1,96 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #171a21;
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Game Description Styles */
+  .game-description {
+    background-color: #1b2838;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .game-description h1 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .game-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .game-image {
+    flex-basis: 40%;
+  }
+  
+  .game-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .game-details {
+    flex-basis: 60%;
+    padding-left: 20px;
+  }
+  
+  .game-details h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .game-details p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #a8b2c2;
+  }
+  
+  .game-details ul {
+    margin-bottom: 20px;
+    list-style: none;
+  }
+  
+  .game-details li {
+    margin-bottom: 5px;
+    color: #a8b2c2;
+  }
+  
+  .add-to-cart {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #00adee;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #0088cc;
+  }
+  
