@@ -1,0 +1,152 @@
+body {
+    background-color: #1b2838;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile {
+    background-color: #232c3d;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  .profile h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .profile h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .profile p {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .stat {
+    flex-basis: 30%;
+    padding: 10px;
+    background-color: #34495e;
+    border-radius: 5px;
+  }
+  
+  .stat h4 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .stat p {
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .recent-activity {
+    text-align: left;
+  }
+  
+  .recent-activity h2 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .activity-item {
+    margin-bottom: 10px;
+  }
+  
+  .activity-time {
+    color: #00adee;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  
+  .activity-item p {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .activity-item p strong {
+    font-weight: bold;
+  }
+  /* Your existing CSS styles here */
+
+.additional-info {
+    text-align: left;
+    margin-top: 30px;
+  }
+  
+  .additional-info h2 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .info-item {
+    margin-bottom: 10px;
+  }
+  
+  .info-label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .info-value {
+    color: #fff;
+    font-size: 16px;
+  }
+/* Your existing CSS styles here */
+
+#settings-icon{
+    font-size: 30px;
+    color: #fff;
+}
+#settings-icon:hover {
+    font-size: 30px;
+    color: #818181;
+}
+  
+  
