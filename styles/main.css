@@ -72,6 +72,10 @@
     background-color: #0f1c2b;
   }
   
+  #list-title {
+    color: #c7c7c7;
+    margin:50px 0;
+  }
   
   @media (max-width: 767px) {
     .games-list {
