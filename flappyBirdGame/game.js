@@ -91,7 +91,7 @@ class Pipe {
 
     if (bird.x > this.x + this.width && !this.highlighted) {
       this.highlighted = true;
-      score++;
+      score += 50;
       scoreDisplay.textContent = `Score: ${score}`;
     }
 
