@@ -79,6 +79,9 @@ flex-direction: column-reverse;
 .margin {
     margin-left: 18%;
 }
+.blue-link {
+    color: #70c3ff;
+}
 
 /***main section end ***/
 @media only screen and (max-width: 480px) {
