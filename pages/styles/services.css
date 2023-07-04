@@ -45,3 +45,9 @@ color: #70c3ff;
 margin-top: 2%;
 margin-left: 5%;
 }
+@media only screen and (max-width: 480px) {
+    h2,h4,h6,header .row {
+    margin-left: 0;
+    }
+ 
+}
