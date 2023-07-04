@@ -7,19 +7,7 @@ body{
 }
 /*main nav bar begining*/
 
-  header {
-    width: 100%;
-    background-color :#171D25;
-    height :104px;  
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  } 
-  header button
-  {
-      border: none;
-      background-color :#171d25;
-  }
+ 
   
   a{
     text-decoration: none;
@@ -74,16 +62,7 @@ body{
   }
   
 
-   
-  header a:active {
-    color: #1A97F2;
-  border-bottom: 2px solid #1A97F2;  
-  }
-  
-  header .content a:active {
-    border: none;
-  }
-  
+
     
   .content{
     display: none;
