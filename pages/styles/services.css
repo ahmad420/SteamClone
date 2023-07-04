@@ -1,3 +1,8 @@
+body {
+    background-color: #1A2739;
+}
+/*************header section start***************/
+
 header {
     color: white;
     margin: 50px 0;
@@ -6,12 +11,12 @@ header {
 
 
 header .row {
-    width: 75%;
+    width: 70%;
     height: 50vh;
     padding: 20px;
     flex-basis: calc(33.33% - 20px);
-    background-color: #1A1C21;
-    box-shadow: 0 0 10px #000(0, 0, 0, 0.3);
+    background-color: #171717;
+    box-shadow: 0 0 10px #171717(0, 0, 0, 0.3);
     box-sizing: border-box;
 }
 h2,h4,h6,header .row {
@@ -19,11 +24,11 @@ h2,h4,h6,header .row {
     
 }
 h6 {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 svg{
-    width:100% ;
+    width:80% ;
     height: 40vh;
 }
 .header-text {
@@ -42,12 +47,70 @@ color: #70c3ff;
     color: #82ff01;
 }
  .row .col  {
-margin-top: 2%;
-margin-left: 5%;
+margin-top: 5%;
+margin-left: -10%;
 }
+
+/***header section end*/
+/***main section start**/
+main {
+    width: 100%;
+    height: 130vh;
+    color: white;
+    align-items: center;
+}
+.main-sec{
+    width: 70%;
+height: 40vh;
+display: flex;
+flex-direction: column-reverse;
+}
+.img-div {
+    width: 40%;
+}
+.main-div{
+    width: 20%;
+    font-size: larger;
+   
+}
+.img-div img {
+    width: 100%;
+}
+.margin {
+    margin-left: 18%;
+}
+
+/***main section end ***/
 @media only screen and (max-width: 480px) {
+ 
+ /**media for header*/
     h2,h4,h6,header .row {
     margin-left: 0;
+    font-size: calc(100%/1.5);
+    }
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+    header .row {
+        width: 100%;
+    }
+    .header-number,.header-text {
+        font-size: 10px;
+         }
+    .col .col {
+        display: flex;
+    flex-direction: row-reverse;
+        justify-content: center;
+        margin-left: auto;
+
+    }
+    header .row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    h6 {
+        margin-top: 0px;
     }
  
 }
