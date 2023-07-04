@@ -10,7 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: auto; 
+    margin: 30px auto;
   }
   
   .signup-form {
@@ -20,6 +21,7 @@ body {
     text-align: center;
     max-width: 400px;
     width: 100%;
+    height: 100%;
   }
   
   .signup-form h1 {
@@ -27,16 +29,24 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
   }
+  li,h3,label {
+    color: white;
+  }
   
   .signup-form input[type="text"],
   .signup-form input[type="email"],
-  .signup-form input[type="password"] {
+  .signup-form input[type="password"],
+  .signup-form input[type="date"],
+  .signup-form input[type="number"],
+  .signup-form input[type="file"]
+   {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 3px;
     border: none;
   }
+
   
   .signup-form button {
     background-color: #00adee;
