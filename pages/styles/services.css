@@ -10,15 +10,9 @@ header {
     align-items: center;
 } 
 
-
 header .row {
     width: 70%;
-    height: 50vh;
-    padding: 20px;
-    flex-basis: calc(33.33% - 20px);
-    background-color: #171717;
-    box-shadow: 0 0 10px #171717(0, 0, 0, 0.3);
-    box-sizing: border-box;
+    height: 40vh;
 }
 h2,h4,h6,header .row {
     margin-left: 100px;
@@ -48,8 +42,8 @@ color: #70c3ff;
     color: #82ff01;
 }
  .row .col  {
-margin-top: 5%;
-margin-left: -10%;
+margin-top: 6%;
+margin-left: -15%;
 }
 
 /***header section end*/
