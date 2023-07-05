@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../pages/styles/Siginup.css">
-
+<script src="../JsScripts/signup.js" defer></script>
 </head>
 
 <body>
@@ -43,31 +43,18 @@
     <div class="container">
        
            <form name='form-login' class="signup-form" >
-
             <h1>Create Your Steam Account</h1>
-
             <input type="text" id="userName" placeholder="Username" required>
-
             <input type="text" id="userFirstName" placeholder="First Name" required>
-
             <input type="text" id="userLastName" placeholder="Last Name" required>
-
             <input id="DateOfBirth" type='date'placeholder="Date Of Birth" min='1902-01-01' max='2000-13-13' required></input>
-
-            <select id="locality-dropdown" type="text"   name="locality">
+            <select id="locality-dropdown" type="text" aria-placeholder="city name"  name="locality">
             </select>
-            
-            <label for="StreetAddress">Street Address</label>
             <input type="text" id="StreetAddress" placeholder="רחוב בן גוריון" required>
-
             <input type="number" id="PostBox" placeholder="PostBox" required>
-
             <input type="email" id="email" placeholder="Email" required>
-            
-            <input type="file" id="file" placeholder="jpeg/jpg only" accept=".jpg, .jpeg" required>
-
+            <input type="file" id="file" placeholder="image: jpeg/jpg only" accept=".jpg, .jpeg" required>
             <input type="password" id="pw" placeholder="Password" required>
-            
             <input type="password" id="pw2" placeholder="Password Repeat" required>
             <button type="submit">Sign Up</button>
             <p class="login-link">Already have an account? <a href="./login.html">Sign in</a></p>
@@ -78,7 +65,6 @@
                 <li class="uppercase">Must contain an uppercase letter.</li>
                 <li class="special">Must contain a number or special character.</li>
             </ul>
-            
         </form>
     </div>
     <footer class="footer bg-dark text-white">

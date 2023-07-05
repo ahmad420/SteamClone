@@ -60,7 +60,8 @@ body {
   .signup-form input[type="password"],
   .signup-form input[type="date"],
   .signup-form input[type="number"],
-  .signup-form input[type="file"]
+  .signup-form input[type="file"],
+  select
    {
     width: 100%;
     padding: 10px;
@@ -69,6 +70,9 @@ body {
     border: none;
   }
 
+  .signup-form input[type="file"]{
+    background-color: #fff;
+  }
   
   .signup-form button {
     background-color: #00adee;
