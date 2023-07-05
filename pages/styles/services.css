@@ -53,6 +53,9 @@ main {
     height: 130vh;
     color: white;
     align-items: center;
+margin-left: calc(10%);
+    align-items: center;
+    margin-top: -160px;
 }
 .main-sec{
     width: 70%;
