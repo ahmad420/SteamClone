@@ -55,7 +55,6 @@ main {
     align-items: center;
 margin-left: calc(10%);
     align-items: center;
-    margin-top: -160px;
 }
 .main-sec{
     width: 70%;
@@ -84,14 +83,16 @@ flex-direction: column-reverse;
 /***main section end ***/
 @media only screen and (max-width: 480px) {
  
+
  /**media for header*/
-    h2,h4,h6,header .row {
+    a,h1,h2,h4,h6,p {
     margin-left: 0;
-    font-size: calc(100%/1.5);
+    font-size: calc(100%/2);
     }
     svg {
         height: 100%;
         width: 100%;
+        margin-left: -15%;
     }
     header .row {
         width: 100%;
@@ -103,15 +104,46 @@ flex-direction: column-reverse;
         display: flex;
     flex-direction: row-reverse;
         justify-content: center;
-        margin-left: auto;
 
     }
     header .row {
         display: flex;
         flex-direction: column-reverse;
     }
+    svg{
+        width:80% ;
+        position: absolute;
+        top:0px;
+    }
     h6 {
         margin-top: 0px;
     }
  
+    .main-div{
+        width: 100%;
+        
+    }
+    .img-div {
+        width: 90%;
+        margin-top: -40px;
+        margin-left: auto;
+    }
+    .main-sec{
+    display: flex;
+        flex-direction: column;
+    }
+    .margin{
+        margin-left: 0;
+    }
+    main {
+        height: auto;
+        margin-top: -150px;
+    }
+    .margin-bottom {
+        margin-bottom: -70px;
+    }
+    .margin-media{
+margin-left: -12%;   
+ }
+
 }
