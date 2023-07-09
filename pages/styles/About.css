@@ -3,11 +3,22 @@
     margin: 20px;
     line-height: 1.6;
     color:  #f2f2f2;;
+    
   }
-
+  #about-us{
+  background-color: rgb(238, 238, 238,0.3);
+  padding: 20px;
+  margin: 50px ;
+  border-radius: 20px;
+  }
   #our-mission {
     padding: 60px 0;
     color: #f2f2f2;
+    background-color: rgb(238, 238, 238,0.3);
+    padding: 20px;
+    border-radius: 20px;
+  margin: 50px ;
+
   }
 
   #our-mission h2 {
@@ -40,6 +51,9 @@
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    background-color: rgb(238, 238, 238,0.3);
+    padding: 20px;
+    border-radius: 20px;
   }
   .team-member .avatar img {
     width: 100%;
