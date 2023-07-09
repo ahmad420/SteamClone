@@ -16,7 +16,6 @@ main {
   width:100%;
   display:block;
   position: relative;
-top: 10%;    
 }
 
 #flip {
@@ -57,19 +56,8 @@ top: 10%;
   100% {margin-top:-270px;}
 }
 
-p {
-  position:fixed;
-  width:100%;
-  bottom:30px;
-  font-size:12px;
-  color:#999;
-  margin-top:200px;
-}
-
-
-
 .animated-p {
-    position: relative;
+  position: relative;
     font-family: sans-serif;
     text-transform: uppercase;
     font-size: 2em;
@@ -81,6 +69,10 @@ p {
     animation: animate 4s linear infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  width:100%;
+  bottom:30px;
+  margin-top:80px;
+
   }
   
   @keyframes animate {
@@ -93,17 +85,18 @@ p {
   }
 
   .circle-link {
-	position: absolute;
-bottom:25%;
-left: 49%;
-	line-height: 80px;
-	width: 80px;
-	height: 80px;
-	background-color: #fff;
-	color: #1B2838;
-	font-size: 20px;
-	border-radius: 50%;
-}
+    position: absolute;
+    margin-top: 1%;
+    left: 48%;
+    line-height: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    color: #1B2838;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: opacity 0.5s;
+  }
 .circle-link:hover{
     background-color: #bdc7d376;
 	color: #fff;
