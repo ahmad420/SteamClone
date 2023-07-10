@@ -1,33 +1,36 @@
-import User from "../JsScripts/modules/User.js";
-// // קוד JavaScript thnx page
-// window.onload = function () {
-//   var element = document.querySelector(".circle-link");
-//   element.style.opacity = "0"; // הצגת האלמנט על המסך
-
-//   setTimeout(function () {
-//     element.style.opacity = "1"; // הסתרת האלמנט מהמסך
-//   }, 2000); // 2000 מילישניות = 2 שניות
-// };
-
-
-export function Login() {}
-
-export function createUser(newUser) {
-  // Get the existing user array from local storage
-  let users = JSON.parse(localStorage.getItem("users")) || [];
-
-  // Add the new user to the array
-  users.push(newUser);
-
-  // Update the user array in local storage
-  localStorage.setItem("users", JSON.stringify(users));
+function isUpper(str) {
+  return /[A-Z]/.test(str);
+}
+function hasLowerCase(str) {
+  return /[a-z]/.test(str);
+}
+function containsNumber(str) {
+  return /\d/.test(str);
 }
 
-// Create a new user object
-const newUser = new User(/* user properties */);
+function cheekHebrewValidation(str) {
+  return /[\u0590-\u05FF]/.test(str);
+}
 
-// Call the createUser function to add the new user to the array in local storage
-createUser(newUser);
+function emailAvilabityCheek(email, arr) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].email == email) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function validateEmail(email) {
+  const regex_pattern =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[c+o+m]{2,}))$/;
+
+  if (regex_pattern.test(email)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 export async function getCites() {
   let dropdown = document.getElementById("locality-dropdown");
@@ -65,3 +68,5 @@ export async function getCites() {
 }
 
 export function CheckUserName() {}
+
+module.exports = isUpper;

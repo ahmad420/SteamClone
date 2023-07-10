@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../pages/styles/Login.css">
+    <script src="../JsScripts/login.js"></script>
 
 </head>
 
@@ -42,10 +43,10 @@
         </div>
     </nav>
     <div class="container">
-        <form class="login-form">
+        <form class="login-form" onsubmit="check(event)">
             <h1>Welcome back to Steam</h1>
-            <input type="text" placeholder="Username" required>
-            <input type="password" placeholder="Password" required>
+            <input type="text" id="LoginUserName" placeholder="Username">
+            <input type="password" id="LoginPassoword" placeholder="Password">
             <button type="submit">Sign In</button>
             <p class="signup-link">Don't have an account? <a href="./signup.html">Sign up now</a></p>
         </form>

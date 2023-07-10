@@ -34,78 +34,101 @@ class User {
     return this.DateOfBirth.toString();
   }
 }
-getCites();
-function store() {
-  var userName = document.getElementById("userName").value;
-  var userFirstName = document.getElementById("userFirstName").value;
-  var userLastName = document.getElementById("userLastName").value;
-  var DateOfBirth = document.getElementById("DateOfBirth").value;
-  var CityName = document.getElementById("locality-dropdown").value;
-  var StreetAddress = document.getElementById("StreetAddress").value;
-  var PostBox = document.getElementById("PostBox").value;
-  var email = document.getElementById("email").value;
-  var file = document.getElementById("file").value;
-  var pw = document.getElementById("pw").value;
-  var pw2 = document.getElementById("pw2").value;
+// getCites();
 
-  // const onlyHebrewPattern = new RegExp(/^[\u0590-\u05FF ,.'-]+$/i);
+function store(event) {
+  event.preventDefault(); // Prevent the default form submission
 
-  const arr = users;
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i].email == email) {
-      alert("This Mail Already in use");
-      return false;
-    }
+  const userName = document.getElementById("userName").value;
+  const userFirstName = document.getElementById("userFirstName").value;
+  const userLastName = document.getElementById("userLastName").value;
+  const DateOfBirth = document.getElementById("DateOfBirth").value;
+  const CityName = document.getElementById("locality-dropdown").value;
+  const StreetAddress = document.getElementById("StreetAddress").value;
+  const PostBox = document.getElementById("PostBox").value;
+  const email = document.getElementById("email").value;
+  const file = document.getElementById("file").value;
+  const pw = document.getElementById("pw").value;
+  const pw2 = document.getElementById("pw2").value;
+
+  if (users.some((user) => user.email === email)) {
+    alert("This Email is already in use");
+    return false;
   }
 
   if (userName.length > 60) {
-    alert("This  UserNameis too long");
-  } else if (pw.length < 7 || pw.length > 12) {
-    alert("The password Length Must be Betwen 7-12");
-  } else if (pw != pw2) {
-    alert("passwords are Not Match! ");
-  } else if (
-    containsNumber(userLastName) == true ||
-    containsNumber(userFirstName) == true
-  ) {
-    alert("User first Name and Last Name Must Not Contain Numbers! ");
-  } else if (validateEmail(email) == false) {
-    alert("The email address is not valid");
-  } else if (cheekHebrewValidation(StreetAddress) == false) {
-    alert("The Street Address Must Be In Hebrew");
-  } else if (PostBox < 0) {
-    alert("POST Box  Number , Cant be Negative!");
-  } else if (pw.search[/a-z/i] < 1) {
-    //בודק אם יש בסיסמה מספר
-    alert("Your password needs a number");
-  } else if (isUpper(pw) == false) {
-    alert("Your password needs an uppser case letter");
-  } else if (hasLowerCase(pw) == false) {
-    alert("Your password needs a lower case letter");
-  } else {
-    let newUser = new User(
-      userName,
-      userFirstName,
-      userLastName,
-      DateOfBirth,
-      CityName,
-      StreetAddress,
-      PostBox,
-      email,
-      file,
-      pw,
-      pw2
-    );
-    users.push(newUser);
-    localStorage.setItem(`users`, JSON.stringify(users));
-    alert("Your account has been created succsefully , You Can Log-In Now: ");
+    alert("The UserName is too long");
+    return false;
   }
+
+  if (pw.length < 7 || pw.length > 12) {
+    alert("The password length must be between 7-12");
+    return false;
+  }
+
+  if (pw !== pw2) {
+    alert("Passwords do not match");
+    return false;
+  }
+
+  if (containsNumber(userLastName) || containsNumber(userFirstName)) {
+    alert("User first name and last name must not contain numbers");
+    return false;
+  }
+
+  if (!validateEmail(email)) {
+    alert("The email address is not valid");
+    return false;
+  }
+
+  if (!cheekHebrewValidation(StreetAddress)) {
+    alert("The street address must be in Hebrew");
+    return false;
+  }
+
+  if (PostBox < 0) {
+    alert("Post box number cannot be negative");
+    return false;
+  }
+
+  if (!/\d/.test(pw)) {
+    alert("Your password needs a number");
+    return false;
+  }
+
+  if (!/[A-Z]/.test(pw)) {
+    alert("Your password needs an uppercase letter");
+    return false;
+  }
+
+  if (!/[a-z]/.test(pw)) {
+    alert("Your password needs a lowercase letter");
+    return false;
+  }
+
+  const newUser = new User(
+    userName,
+    userFirstName,
+    userLastName,
+    DateOfBirth,
+    CityName,
+    StreetAddress,
+    PostBox,
+    email,
+    file,
+    pw,
+    pw2
+  );
+
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Your account has been created successfully. You can now log in.");
 }
 
 /// valdation functions
-function isUpper(str) {
-  return /[A-Z]/.test(str);
-}
+// function isUpper(str) {
+//   return /[A-Z]/.test(str);
+// }
 function hasLowerCase(str) {
   return /[a-z]/.test(str);
 }
@@ -137,20 +160,20 @@ function validateEmail(email) {
   }
 }
 
-//  form date getter
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
-var yyyy = today.getFullYear();
-if (dd < 10) {
-  dd = "0" + dd;
-}
-if (mm < 10) {
-  mm = "0" + mm;
-}
+// //  form date getter
+// var today = new Date();
+// var dd = today.getDate();
+// var mm = today.getMonth() + 1; //January is 0!
+// var yyyy = today.getFullYear();
+// if (dd < 10) {
+//   dd = "0" + dd;
+// }
+// if (mm < 10) {
+//   mm = "0" + mm;
+// }
 
-today = yyyy + "-" + mm + "-" + dd;
-document.getElementById("DateOfBirth").setAttribute("max", today);
+// today = yyyy + "-" + mm + "-" + dd;
+// document.getElementById("DateOfBirth").setAttribute("max", today);
 
 /// cites jason file dropdown
 

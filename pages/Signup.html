@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../pages/styles/Siginup.css">
-    <script src="../JsScripts/signup.js" defer></script>
+    <script src="../JsScripts/signup.js" ></script>
+    
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class=" navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="../index.html"><img src="../images/steam.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,21 +43,21 @@
     </nav>
     <div class="container">
 
-        <form name='form-login' id="form" class="signup-form">
+        <form name='form-login' id="form" class="signup-form" onsubmit="store(event)">
             <h1>Create Your Steam Account</h1>
-            <input type="text" id="userName" placeholder="Username" required>
-            <input type="text" id="userFirstName" placeholder="First Name" required>
-            <input type="text" id="userLastName" placeholder="Last Name" required>
-            <input id="DateOfBirth" type='date' placeholder="Date Of Birth" min='1902-01-01' max='2000-13-13'
-                required></input>
+            <input type="text" id="userName" placeholder="Username">
+            <input type="text" id="userFirstName" placeholder="First Name">
+            <input type="text" id="userLastName" placeholder="Last Name">
+            <input id="DateOfBirth" type='date' placeholder="Date Of Birth" min='1902-01-01' max='2000-13-13'></input>
             <select id="locality-dropdown" type="text" aria-placeholder="city name" name="locality">
             </select>
-            <input type="text" id="StreetAddress" placeholder="רחוב בן גוריון" required>
-            <input type="number" id="PostBox" placeholder="PostBox" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="file" id="file" placeholder="image: jpeg/jpg only" accept=".jpg, .jpeg" required>
-            <input type="password" id="pw" placeholder="Password" required>
-            <input type="password" id="pw2" placeholder="Password Repeat" required>
+            <input type="text" id="StreetAddress" placeholder="רחוב בן גוריון">
+            <input type="number" id="PostBox" placeholder="PostBox">
+            <input type="email" id="email" placeholder="Email">
+            <input type="file" id="file" placeholder="image: jpeg/jpg only" accept=".jpg, .jpeg">
+            <input type="password" id="pw" placeholder="Password">
+            <input type="password" id="pw2" placeholder="Password Repeat">
+            <input id="rgstr_btn" type="submit" value="Register">
             <p class="login-link">Already have an account? <a href="./login.html">Sign in</a></p>
             <ul class="helper-text">
                 <h3>Password:</h3>
@@ -66,7 +67,6 @@
                 <li class="special">Must contain a number or special character.</li>
             </ul>
         </form>
-        <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
     </div>
     <footer class="footer bg-dark text-white">
         <div class="container">
@@ -108,6 +108,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    </body>
 
 </html>
