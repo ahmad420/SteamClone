@@ -126,9 +126,9 @@ function store(event) {
 }
 
 /// valdation functions
-// function isUpper(str) {
-//   return /[A-Z]/.test(str);
-// }
+ function isUpper(str) {
+  return /[A-Z]/.test(str);
+ }
 function hasLowerCase(str) {
   return /[a-z]/.test(str);
 }
