@@ -53,10 +53,23 @@ class User{
 }
 
 //////////////////////////////////////////////////
-function editingDetails()
+function editingUsers()
 {
   let foo = prompt('Enter here The Mail For the user you want to edit: ');
  userShow(foo);
+ var editableElements = document.querySelectorAll("[contenteditable=false]");
+
+ for (var i = 0; i < editableElements.length; ++i) 
+ {
+    editableElements[i].setAttribute("contentEditable", true);
+ }
+ 
+ 
+}
+/**//////////////////////////////// */
+function editingDetails()
+{
+  
  var editableElements = document.querySelectorAll("[contenteditable=false]");
 
  for (var i = 0; i < editableElements.length; ++i) 

@@ -5,7 +5,7 @@ body {
     padding: 0;
   }
   
-  .container {
+  .profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +172,7 @@ body {
 
 
 
-.saveBtn,#editBtn,#deleteUserBtn,.buttonTable{
+.saveBtn,#editBtn{
   background-color: #1B2838;
   border-radius: 50px;
   border-color: #fff;
@@ -180,12 +180,7 @@ body {
   padding:5px ;
   min-width: 110px;
 }
-.saveBtn:hover,#editBtn:hover,#deleteUserBtn:hover,.buttonTable:hover{
+.saveBtn:hover,#editBtn:hover{
   background-color: #fff;
   color: #1B2838;
-}
-/* End */
-#table {
-  background: green;
-  min-width: 1000px;
 }
