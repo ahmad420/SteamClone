@@ -51,6 +51,10 @@ function store(event) {
   const pw = document.getElementById("pw").value;
   const pw2 = document.getElementById("pw2").value;
 
+  if (pw.length < 7 || pw.length > 12) {
+    alert("The password length must be between 7-12");
+    return false;
+  }
   if (users.some((user) => user.email === email)) {
     alert("This Email is already in use");
     return false;
@@ -61,10 +65,6 @@ function store(event) {
     return false;
   }
 
-  if (pw.length < 7 || pw.length > 12) {
-    alert("The password length must be between 7-12");
-    return false;
-  }
 
   if (pw !== pw2) {
     alert("Passwords do not match");
@@ -142,7 +142,7 @@ function cheekHebrewValidation(str) {
 
 function emailAvilabityCheek(email, arr) {
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i].email == email) {
+    if (arr[i].email == email ) {
       return false;
     }
   }
