@@ -5,7 +5,7 @@ function check(event) {
 
   if (LoginUserName == "admin" && LoginPassoword == "admin1234admin") {
     alert(" You are logged in. Admin Page");
-    location.replace("../adminPage/admin.html");
+    location.replace("../pages/admin.html");
     return;
   }
   const arr = JSON.parse(localStorage.getItem("users"));

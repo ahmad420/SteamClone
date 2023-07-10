@@ -9,7 +9,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 20px auto;
+
   }
   
   .profile {
@@ -170,7 +172,7 @@ body {
 
 
 
-.saveBtn,#editBtn{
+.saveBtn,#editBtn,#deleteUserBtn,.buttonTable{
   background-color: #1B2838;
   border-radius: 50px;
   border-color: #fff;
@@ -178,8 +180,12 @@ body {
   padding:5px ;
   min-width: 110px;
 }
-.saveBtn:hover,#editBtn:hover{
+.saveBtn:hover,#editBtn:hover,#deleteUserBtn:hover,.buttonTable:hover{
   background-color: #fff;
   color: #1B2838;
 }
 /* End */
+#table {
+  background: #000;
+  width: auto;
+}
