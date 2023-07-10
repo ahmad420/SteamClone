@@ -19,7 +19,7 @@ body {
     border-radius: 5px;
     padding: 30px;
     text-align: center;
-    max-width: 600px;
+    min-width:600px  ;
     width: 100%;
   }
   
@@ -147,7 +147,7 @@ body {
     color: #818181;
 }
   
-  /****************************************************************/
+  /**********************admin page style******************************************/
 
   
 
@@ -186,6 +186,6 @@ body {
 }
 /* End */
 #table {
-  background: #000;
-  width: auto;
+  background: green;
+  min-width: 1000px;
 }
