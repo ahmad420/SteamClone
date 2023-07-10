@@ -401,21 +401,6 @@ function getCites()
 //         sessionStorage.setItem(`user`, JSON.stringify(arr[i]));
 //         location.replace("../UserProfile/userProfile.html");
 
-<<<<<<< HEAD
-//         return;
-//       } else {
-//         alert("Your Password is Wrong");
-//         return;
-//       }
-//     }
-//   }
-//   //////If the user name is wrong
-//   if (flag == false) {
-//     alert("Your User Name  is Wrong");
-//     return;
-//   }
-// }
-=======
 
 
 
@@ -483,4 +468,3 @@ function check(){
     }
    
 }
->>>>>>> 927680c87056cc7ce7e910adeaaffae4761a0861
