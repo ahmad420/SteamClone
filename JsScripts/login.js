@@ -30,7 +30,7 @@ function check(event) {
         flag = true;
         alert("You are logged in.");
         sessionStorage.setItem(`user`, JSON.stringify(arr[i]));
-        location.replace("../UserProfile/userProfile.html");
+        location.replace("../pages/profile.html");
 
         return;
       } else {
