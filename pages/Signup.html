@@ -42,7 +42,7 @@
     </nav>
     <div class="container">
        
-           <form name='form-login' class="signup-form" >
+           <form name='form-login' id="form" class="signup-form" >
             <h1>Create Your Steam Account</h1>
             <input type="text" id="userName" placeholder="Username" required>
             <input type="text" id="userFirstName" placeholder="First Name" required>
@@ -56,7 +56,6 @@
             <input type="file" id="file" placeholder="image: jpeg/jpg only" accept=".jpg, .jpeg" required>
             <input type="password" id="pw" placeholder="Password" required>
             <input type="password" id="pw2" placeholder="Password Repeat" required>
-            <button type="submit">Sign Up</button>
             <p class="login-link">Already have an account? <a href="./login.html">Sign in</a></p>
             <ul class="helper-text">
                 <h3>Password:</h3>
@@ -66,6 +65,7 @@
                 <li class="special">Must contain a number or special character.</li>
             </ul>
         </form>
+        <input id="rgstr_btn" type="submit" value="Register" onclick="store()">
     </div>
     <footer class="footer bg-dark text-white">
         <div class="container">
