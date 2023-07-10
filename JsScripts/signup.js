@@ -34,7 +34,7 @@ class User {
     return this.DateOfBirth.toString();
   }
 }
-// getCites();
+ getCites();
 
 function store(event) {
   event.preventDefault(); // Prevent the default form submission
