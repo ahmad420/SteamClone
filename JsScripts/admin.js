@@ -129,9 +129,20 @@ function localStorageClean()
 }
 
 
-function saveDetails()
+function saveDetails(foo)
 {
-    
+  var users=JSON.parse(localStorage.getItem('users'));
+  var index =0;
+  
+  for(var i=0; i<users.length; i++)
+  {
+    if(foo==users[i].email)
+    {
+      index=i;
+      break;
+  
+    }
+  }
   var userName =document.getElementById("Name").innerHTML;
   var userFirstName=document.getElementById('userFirstName').innerHTML;
   var userLastName=document.getElementById('userLastName').innerHTML;
