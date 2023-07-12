@@ -51,11 +51,11 @@ class User{
  
 
 }
-
+let foo;
 //////////////////////////////////////////////////
 function editingUsers()
 {
-  let foo = prompt('Enter here The Mail For the user you want to edit: ');
+  foo = prompt('Enter here The Mail For the user you want to edit: ');
  userShow(foo);
  var editableElements = document.querySelectorAll("[contenteditable=false]");
 
