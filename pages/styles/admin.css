@@ -1,0 +1,135 @@
+body {
+    background-color: #1b2838;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 20px auto;
+
+  }
+  
+  .profile {
+    background-color: #232c3d;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    min-width:600px  ;
+    width: 100%;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+  .profile h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .profile h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .profile p {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .stat {
+    flex-basis: 30%;
+    padding: 10px;
+    background-color: #34495e;
+    border-radius: 5px;
+  }
+  
+  .stat h4 {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .stat p {
+    color: #fff;
+    font-size: 18px;
+  }
+  #settings-icon{
+    font-size: 30px;
+    color: #fff;
+}
+#settings-icon:hover {
+    font-size: 30px;
+    color: #818181;
+}
+
+
+.card {
+    text-align: left;
+    height: auto;
+    padding: 20px 0 20px 50px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+
+  }
+  
+   .card table {
+    border: none;
+    height: 20px;
+    width: 100%;
+  }
+
+  .saveBtn,#editBtn,#deleteUserBtn,.buttonTable{
+    background-color: #1B2838;
+    border-radius: 50px;
+    border-color: #fff;
+    color: #fff;
+    padding:5px ;
+    min-width: 110px;
+  }
+  .saveBtn:hover,#editBtn:hover,#deleteUserBtn:hover,.buttonTable:hover{
+    background-color: #fff;
+    color: #1B2838;
+  }
+  /* End */
+  #table {
+    min-width: 900px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: -3%;
+    box-shadow: 1px 1px 8px 0 grey;
+    margin-top: 15px;
+
+  }
+ .bg-white {
+  margin-top: -10px;
+ }

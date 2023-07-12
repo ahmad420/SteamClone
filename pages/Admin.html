@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../pages/styles/admin.css">
-
+<script src="../JsScripts/admin.js"defer></script>
 </head>
 
 <body>
@@ -41,7 +41,119 @@
             </ul>
         </div>
     </nav>
-
+    <div class="profile-container">
+        <div class="profile">
+            <div class="profile-header">
+                <img src="../images/man.jpg" alt="Avatar" class="avatar">
+                <div id="profileImg"></div>
+                <div class="profile-info">
+                    <h1 class="name" id="Name1"></h1>
+                    <h3 class="FamilyName" id="Email1"></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nisi et velit fringilla
+                        consequat vel ut urna.</p>
+                </div>
+                <div class="settings-icon">
+                    <a href="./setings.html"> <i id="settings-icon" class="fa fa-cog"></i></a>
+                </div>
+            </div>
+            <div class="game-stats">
+                <div class="stat">
+                    <h4>Online Members</h4>
+                    <p>50</p>
+                </div>
+                <div class="stat">
+                    <h4>Members</h4>
+                    <p>800</p>
+                </div>
+                <div class="stat">
+                    <h4>Removed </h4>
+                    <p>20</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2>All the Users info </h2>
+                <div class="card-body">
+                    <button class="buttonTable">Get Users</button>
+                        <button  id="deleteUserBtn">Delete User</button>
+                        <button  id="editBtn" onclick="editingUsers()" >Edit User</button>
+                        <div class="tableDiv">
+                            <div class="center" id="table">
+                                
+                            </div>
+                               
+                        </div>
+                       
+                    </div>
+                    <h2>User info </h2>
+                    <div class="card bg-white">
+                        <div class="card-body">
+                        <button  id="editBtn" onclick="editingDetails()" >Edit</button>
+                        <button class="saveBtn" onclick="saveDetails()">Save Changes</button>
+                        <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>:</td>
+                                        <td id="Name"  contenteditable="false" ></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td>:</td>
+                                        <td id="userFirstName"  contenteditable="false"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Last Name</td>
+                                        <td>:</td>
+                                        <td id="userLastName"  contenteditable="false"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Password</td>
+                                        <td>:</td>
+                                        <td id="pw" contenteditable="false"></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>:</td>
+                                        <td id="Email" contenteditable="false"></td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>Date Of Birth</td>
+                                        <td>:</td>
+                                        <td id="DateOfBirth" contenteditable="false"></td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>City</td>
+                                        <td>:</td>
+                                        <td id="city" contenteditable="false"></td>
+                                    </tr>
+            
+                                    <tr>
+                                        <td>Address</td>
+                                        <td>:</td>
+                                        <td id="StreetAddress"contenteditable="false"></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Post Box</td>
+                                        <td>:</td>
+                                        <td id="postBox"contenteditable="false"></td>
+                                    </tr>
+            
+                                    
+            
+                                </tbody>
+                            </table>
+                        </div>
+                        
+        </div>
+        </div>
+        
     <footer class="footer bg-dark text-white">
         <div class="container">
             <div class="row">

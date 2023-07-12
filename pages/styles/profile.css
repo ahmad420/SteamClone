@@ -5,11 +5,13 @@ body {
     padding: 0;
   }
   
-  .container {
+  .profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 20px auto;
+
   }
   
   .profile {
@@ -17,7 +19,7 @@ body {
     border-radius: 5px;
     padding: 30px;
     text-align: center;
-    max-width: 600px;
+    min-width:600px  ;
     width: 100%;
   }
   
@@ -117,14 +119,10 @@ body {
     margin-top: 30px;
   }
   
-  .additional-info h2 {
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
   
   .info-item {
     margin-bottom: 10px;
+    color: #fff;
   }
   
   .info-label {
@@ -149,4 +147,40 @@ body {
     color: #818181;
 }
   
+  /**********************admin page style******************************************/
+
   
+
+
+
+.card {
+  text-align: left;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 1px 1px 8px 0 grey;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px 0 20px 50px;
+  width: 100%;
+}
+
+ .card table {
+  border: none;
+  height: 20px;
+  width: 100%;
+}
+
+
+
+.saveBtn,#editBtn{
+  background-color: #1B2838;
+  border-radius: 50px;
+  border-color: #fff;
+  color: #fff;
+  padding:5px ;
+  min-width: 110px;
+}
+.saveBtn:hover,#editBtn:hover{
+  background-color: #fff;
+  color: #1B2838;
+}
