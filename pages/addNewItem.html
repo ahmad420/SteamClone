@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Item</h1>
+
+        <form id="add-item-form">
+            <div class="form-group">
+                <label for="item-name">Name:</label>
+                <input type="text" class="form-control" id="item-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="item-price">Price:</label>
+                <input type="number" class="form-control" id="item-price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="item-category">Category:</label>
+                <input type="text" class="form-control" id="item-category" required>
+            </div>
+
+            <div class="form-group">
+                <label for="item-image">Image URL:</label>
+                <input type="text" class="form-control" id="item-image" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+    </div>
+
+
+    <script src="../JsScripts/addNewItem.js"></script>
+</body>
+
+</html>
