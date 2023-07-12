@@ -1,6 +1,6 @@
 let users = JSON.parse(localStorage.getItem("users")) || new Array();
 // import { getCites } from "../JsScripts/functions";
-getCites();
+// getCites();
 
 class User {
   constructor(
@@ -36,7 +36,7 @@ class User {
     return this.DateOfBirth.toString();
   }
 }
- getCites();
+getCites();
 
 function store(event) {
   event.preventDefault(); // Prevent the default form submission
@@ -66,7 +66,6 @@ function store(event) {
     alert("The UserName is too long");
     return false;
   }
-
 
   if (pw !== pw2) {
     alert("Passwords do not match");
@@ -128,9 +127,9 @@ function store(event) {
 }
 
 /// valdation functions
- function isUpper(str) {
+function isUpper(str) {
   return /[A-Z]/.test(str);
- }
+}
 function hasLowerCase(str) {
   return /[a-z]/.test(str);
 }
@@ -144,7 +143,7 @@ function cheekHebrewValidation(str) {
 
 function emailAvilabityCheek(email, arr) {
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i].email == email ) {
+    if (arr[i].email == email) {
       return false;
     }
   }
@@ -179,39 +178,37 @@ function validateEmail(email) {
 
 /// cites jason file dropdown
 
-// export async function getCites() {
-//   let dropdown = document.getElementById("locality-dropdown");
-//   dropdown.length = 0;
+async function getCites() {
+  let dropdown = document.getElementById("locality-dropdown");
+  dropdown.length = 0;
 
-//   let defaultOption = document.createElement("option");
-//   defaultOption.text = "Choose State/Province";
+  let defaultOption = document.createElement("option");
+  defaultOption.text = "Choose State/Province";
 
-//   dropdown.add(defaultOption);
-//   dropdown.selectedIndex = 0;
+  dropdown.add(defaultOption);
+  dropdown.selectedIndex = 0;
 
-//   const url = "../data/cities.json";
+  const url = "../data/cities.json";
 
-//   try {
-//     const response = await fetch(url);
+  try {
+    const response = await fetch(url);
 
-//     if (response.status !== 200) {
-//       alert("Looks like there was a problem. Status Code: " + response.status);
-//       return;
-//     }
+    if (response.status !== 200) {
+      alert("Looks like there was a problem. Status Code: " + response.status);
+      return;
+    }
 
-//     const data = await response.json();
+    const data = await response.json();
 
-//     let option;
+    let option;
 
-//     for (let i = 0; i < data.length; i++) {
-//       option = document.createElement("option");
-//       option.text = data[i].name;
-//       option.value = data[i].abbreviation;
-//       dropdown.add(option);
-//     }
-//   } catch (err) {
-//     alert("Fetch Error -", err);
-//   }
-// }
-
-//checking
+    for (let i = 0; i < data.length; i++) {
+      option = document.createElement("option");
+      option.text = data[i].name;
+      option.value = data[i].abbreviation;
+      dropdown.add(option);
+    }
+  } catch (err) {
+    alert("Fetch Error -", err);
+  }
+}
