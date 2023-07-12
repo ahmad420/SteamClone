@@ -1,4 +1,6 @@
 let users = JSON.parse(localStorage.getItem("users")) || new Array();
+import { getCites } from "../JsScripts/functions";
+getCites();
 
 class User {
   constructor(
@@ -34,7 +36,6 @@ class User {
     return this.DateOfBirth.toString();
   }
 }
-// getCites();
 
 function store(event) {
   event.preventDefault(); // Prevent the default form submission
@@ -177,89 +178,39 @@ function validateEmail(email) {
 
 /// cites jason file dropdown
 
-function getCites() {
-  let dropdown = document.getElementById("locality-dropdown");
-  dropdown.length = 0;
+// export async function getCites() {
+//   let dropdown = document.getElementById("locality-dropdown");
+//   dropdown.length = 0;
 
-  let defaultOption = document.createElement("option");
-  defaultOption.text = "Choose State/Province";
+//   let defaultOption = document.createElement("option");
+//   defaultOption.text = "Choose State/Province";
 
-  dropdown.add(defaultOption);
-  dropdown.selectedIndex = 0;
+//   dropdown.add(defaultOption);
+//   dropdown.selectedIndex = 0;
 
-  const url = "../json/cities.json";
+//   const url = "../data/cities.json";
 
-  fetch(url)
-    .then(function (response) {
-      if (response.status !== 200) {
-        console.warn(
-          "Looks like there was a problem. Status Code: " + response.status
-        );
-        return;
-      }
+//   try {
+//     const response = await fetch(url);
 
-      // Examine the text in the response
-      response.json().then(function (data) {
-        let option;
+//     if (response.status !== 200) {
+//       alert("Looks like there was a problem. Status Code: " + response.status);
+//       return;
+//     }
 
-        for (let i = 0; i < data.length; i++) {
-          option = document.createElement("option");
-          option.text = data[i].name;
-          option.value = data[i].abbreviation;
-          dropdown.add(option);
-        }
-      });
-    })
-    .catch(function (err) {
-      console.error("Fetch Error -", err);
-    });
-}
+//     const data = await response.json();
+
+//     let option;
+
+//     for (let i = 0; i < data.length; i++) {
+//       option = document.createElement("option");
+//       option.text = data[i].name;
+//       option.value = data[i].abbreviation;
+//       dropdown.add(option);
+//     }
+//   } catch (err) {
+//     alert("Fetch Error -", err);
+//   }
+// }
 
 //checking
-
-function check() {
-  var LoginUserName = document.getElementById("LoginUserName").value;
-  var LoginPassoword = document.getElementById("LoginPassoword").value;
-
-  if (LoginUserName == "kutaiba" && LoginPassoword == "kutaiba123") {
-    alert(" You are logged in. Admin Page");
-    location.replace("../adminPage/admin.html");
-    return;
-  }
-  const arr = JSON.parse(localStorage.getItem("users"));
-
-  var arrayOfUserNames = new Array();
-  var arrayOfPw = new Array();
-
-  ///saving all passowrds and user names in arrays
-  for (var i = 0; i < arr.length; i++) {
-    arrayOfUserNames[i] = arr[i].userName;
-  }
-  for (var i = 0; i < arr.length; i++) {
-    arrayOfPw[i] = arr[i].pw;
-  }
-  ///////////////////////////////////////////////
-
-  var flag = false;
-  /// cheking if user name and passoword is correct
-  for (var i = 0; i < arrayOfUserNames.length; i++) {
-    if (LoginUserName == arrayOfUserNames[i]) {
-      if (LoginPassoword == arrayOfPw[i]) {
-        flag = true;
-        alert("You are logged in.");
-        sessionStorage.setItem(`user`, JSON.stringify(arr[i]));
-        location.replace("../UserProfile/userProfile.html");
-
-        return;
-      } else {
-        alert("Your Password is Wrong");
-        return;
-      }
-    }
-  }
-  //////If the user name is wrong
-  if (flag == false) {
-    alert("Your User Name  is Wrong");
-    return;
-  }
-}

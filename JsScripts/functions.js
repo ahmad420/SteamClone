@@ -68,5 +68,3 @@ export async function getCites() {
 }
 
 export function CheckUserName() {}
-
-module.exports = isUpper;
