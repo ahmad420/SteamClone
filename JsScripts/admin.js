@@ -73,6 +73,7 @@ class User {
     this.pw2 = pw2;
   }
 }
+<<<<<<< HEAD
 
 let foo;
 
@@ -83,6 +84,18 @@ function editingUsers() {
   var editableElements = document.querySelectorAll("[contenteditable=false]");
 
   for (var i = 0; i < editableElements.length; ++i) {
+=======
+let foo;
+//////////////////////////////////////////////////
+function editingUsers()
+{
+  foo = prompt('Enter here The Mail For the user you want to edit: ');
+ userShow(foo);
+ var editableElements = document.querySelectorAll("[contenteditable=false]");
+
+ for (var i = 0; i < editableElements.length; ++i) 
+ {
+>>>>>>> 8dcab1902a78cb42897da79f9e7bdb8df25c4857
     editableElements[i].setAttribute("contentEditable", true);
   }
 }
