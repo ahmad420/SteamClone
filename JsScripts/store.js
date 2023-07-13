@@ -4,90 +4,90 @@ if (renderdflag) {
   itemsData = [
     {
       id: 1,
-      name: "Item 1",
-      price: 10,
+      name: "RED DEAD II REDEMPTION",
+      price: 130,
       category: "Category 1",
-      image: "https://via.placeholder.com/200",
+      image: "../images/redead.jpg",
     },
     {
       id: 2,
-      name: "Item 2",
-      price: 15,
+      name: "FIFA 23 (Ultimate Edition)",
+      price: 249,
       category: "Category 2",
-      image: "https://via.placeholder.com/200",
+      image: "../images/fifa1.jpg",
     },
     {
       id: 3,
-      name: "Item 3",
-      price: 20,
+      name: "GRAND THEFT AUTO 6",
+      price: 220,
       category: "Category 1",
-      image: "https://via.placeholder.com/200",
+      image: "../images/gta1.jpg",
     },
     {
       id: 4,
-      name: "Item 4",
-      price: 25,
+      name: "Forza Motorsport ",
+      price: 279,
       category: "Category 3",
-      image: "https://via.placeholder.com/200",
+      image: "../images/forza.jpg",
     },
     {
       id: 5,
-      name: "Item 5",
-      price: 30,
+      name: "Minecraft Legends",
+      price: 149,
       category: "Category 2",
-      image: "https://via.placeholder.com/200",
+      image: "../images/minicraft.jpg",
     },
     {
       id: 6,
-      name: "Item 6",
-      price: 35,
+      name: "Call of Duty:Modern Warfare 2",
+      price: 349,
       category: "Category 1",
-      image: "https://via.placeholder.com/200",
+      image: "../images/call1.jpg",
     },
     {
       id: 7,
-      name: "Item 7",
-      price: 40,
+      name: "Need for Speed™ Unbound",
+      price: 259,
       category: "Category 3",
-      image: "https://via.placeholder.com/200",
+      image: "../images/nfs.jpg",
     },
     {
       id: 8,
-      name: "Item 8",
-      price: 45,
+      name: "The Sims 4 - Bundle Pack 5 ",
+      price: 299,
       category: "Category 2",
-      image: "https://via.placeholder.com/200",
+      image: "../images/sims.jpg",
     },
     {
       id: 9,
-      name: "Item 9",
-      price: 50,
+      name: " Asphalt 9: Legends ",
+      price: 159,
       category: "Category 3",
-      image: "https://via.placeholder.com/200",
+      image: "../images/asphalt.jpg",
     },
     {
       id: 10,
-      name: "Item 10",
-      price: 55,
+      name: "WWE 2K23 ",
+      price: 229,
       category: "Category 1",
-      image: "https://via.placeholder.com/200",
+      image: "../images/wwe.jpg",
     },
     {
       id: 11,
-      name: "Item 11",
-      price: 60,
+      name: " Spider-Man - Remastered ",
+      price: 229,
       category: "Category 2",
-      image: "https://via.placeholder.com/200",
+      image: "../images/spider.jpg",
     },
     {
       id: 12,
-      name: "Item 12",
-      price: 65,
+      name: "Assetto Corsa",
+      price: 99,
       category: "Category 3",
-      image: "https://via.placeholder.com/200",
+      image: "../images/assetto.jpg",
     },
   ];
-  // localStorage.setItem("itemsData", JSON.stringify(itemsData));
+  localStorage.setItem("itemsData", JSON.stringify(itemsData));
   renderdflag = false;
 }
 
@@ -149,12 +149,21 @@ function renderItems() {
 
     const price = document.createElement("p");
     price.className = "card-text";
-    price.textContent = "$" + item.price;
+    price.textContent = " ש " + item.price;
 
     const addToCartBtn = document.createElement("button");
     addToCartBtn.className = "btn btn-primary";
     addToCartBtn.textContent = "Add to Cart";
-    addToCartBtn.addEventListener("click", () => addToCart(item));
+    addToCartBtn.addEventListener("click", () => {
+      var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+      if (isLoggedIn==="true") {
+        addToCart(item);
+      } else {
+        // Display a message or redirect the user to the login page
+        alert("Please log in to add items to your cart.");
+        window.location.href = "../pages/Login.html"; // Redirect to the login page
+      }
+    });
 
     cardBody.appendChild(title);
     cardBody.appendChild(price);
@@ -336,7 +345,7 @@ function renderCart() {
 
     emptyCartBtn.style.display = "block";
     checkoutBtn.style.display = "block";
-    totalPrice.textContent = "Total Price: $" + total;
+    totalPrice.textContent = "Total Price: ש " + total;
   } else {
     emptyCartBtn.style.display = "none";
     checkoutBtn.style.display = "none";

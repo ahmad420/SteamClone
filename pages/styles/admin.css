@@ -108,7 +108,7 @@ body {
     width: 100%;
   }
 
-  .saveBtn,#editBtn,#deleteUserBtn,.buttonTable{
+  .button{
     background-color: #1B2838;
     border-radius: 50px;
     border-color: #fff;
@@ -116,7 +116,7 @@ body {
     padding:5px ;
     min-width: 110px;
   }
-  .saveBtn:hover,#editBtn:hover,#deleteUserBtn:hover,.buttonTable:hover{
+  .button:hover{
     background-color: #fff;
     color: #1B2838;
   }
@@ -132,4 +132,9 @@ body {
   }
  .bg-white {
   margin-top: -10px;
+ }
+ 
+
+ p.card-text{
+  color: #1B2838;
  }

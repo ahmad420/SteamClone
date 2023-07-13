@@ -60,7 +60,7 @@ const paymentDetailsContainer = document.getElementById("payment-details");
 const total = document.getElementById("total");
 
 const totalText = document.createElement("p");
-total.textContent = "Total Price: $" + totalPrice;
+total.textContent = "Total Price: ש" + totalPrice;
 
 const paymentMessage = document.createElement("p");
 paymentMessage.textContent = "Please proceed with your payment.";

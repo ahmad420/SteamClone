@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Description</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Items</title>
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" type="text/css" href="./styles/gamePage.css">
+    <link rel="stylesheet" href="../pages/styles/items.css">
+
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="../index.html"><img src="../images/steam.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -38,39 +41,10 @@
             </ul>
         </div>
     </nav>
+  
+      
+    <div  id="items-container"></div>
 
-    <div class="container">
-        <div class="game-description">
-            <h1>Game Title</h1>
-            <div class="game-info">
-                <div class="game-image">
-                    <img src="../images/kingdom.jpg" alt="Game Image">
-                </div>
-                <div class="game-details">
-                    <h2>About the Game</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nisi et velit fringilla
-                        consequat vel ut urna. Quisque hendrerit sem et eleifend sagittis. Integer maximus dui et neque
-                        tincidunt, vel lobortis dolor malesuada. Mauris in sapien in justo pulvinar dapibus. Donec
-                        gravida nulla at metus tincidunt, sed pharetra magna malesuada.</p>
-                    <h2>Key Features</h2>
-                    <ul>
-                        <li>Feature 1</li>
-                        <li>Feature 2</li>
-                        <li>Feature 3</li>
-                    </ul>
-                    <h2>System Requirements</h2>
-                    <ul>
-                        <li>Operating System: Windows 10</li>
-                        <li>Processor: Intel Core i5-6500</li>
-                        <li>Memory: 8 GB RAM</li>
-                        <li>Graphics: NVIDIA GTX 970</li>
-                        <li>Storage: 50 GB available space</li>
-                    </ul>
-                    <button onclick="mustLogin()"  class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer class="footer bg-dark text-white">
         <div class="container">
@@ -110,16 +84,9 @@
             </div>
         </div>
     </footer>
+    <script src="../JsScripts/items.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    function mustLogin()
-{
-  alert("you have To Login First \n You Can creat Acount If Its You First Time ");
-  location.replace('./Login.html')
-}
-
-</script>
 </body>
 
 </html>

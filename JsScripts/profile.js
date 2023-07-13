@@ -40,27 +40,7 @@ class User {
     this.pw2 = pw2;
   }
 }
-function displayUser(users, index) {
-  document.getElementById("Name").textContent += user.userName;
-  document.getElementById("userFirstName").textContent += user.userFirstName;
-  document.getElementById("userLastName").textContent += user.userLastName;
-  document.getElementById("pw").textContent += user.pw;
-  document.getElementById("Name1").textContent += user.userName;
-  document.getElementById("Email").textContent += user.email;
-  document.getElementById("Email1").textContent += user.email;
-  document.getElementById("DateOfBirth").textContent += user.DateOfBirth;
-  document.getElementById("city").textContent += user.CityName;
-  document.getElementById("StreetAddress").textContent += user.StreetAddress;
-  document.getElementById("postBox").textContent += user.PostBox;
-  document.getElementById("profileImg").src += user.file;
 
-  var imgSrc = user.file;
-
-  var img = document.createElement("img");
-  img.src = `user.file`;
-  var src = document.getElementById("profileImg");
-  src.appendChild(img);
-}
 function localStorageClean() {
   sessionStorage.clear();
   //sessionStorage.removeItem('user');
@@ -74,8 +54,41 @@ function editingDetails() {
     editableElements[i].setAttribute("contentEditable", true);
   }
 }
-function displayEditedUser(users1, index) {
-  
+function displayUser(users, index) {
+  document.getElementById("Name").textContent += user.userName;
+  document.getElementById("userFirstName").textContent += user.userFirstName;
+  document.getElementById("userLastName").textContent += user.userLastName;
+  document.getElementById("pw").textContent += user.pw;
+  document.getElementById("Name1").textContent += user.userName;
+  document.getElementById("Email").textContent += user.email;
+  document.getElementById("Email1").textContent += user.email;
+  document.getElementById("DateOfBirth").textContent += user.DateOfBirth;
+  document.getElementById("city").textContent += user.CityName;
+  document.getElementById("StreetAddress").textContent += user.StreetAddress;
+  document.getElementById("postBox").textContent += user.PostBox;
+
+  var imgSrc = user.file;
+  var img = document.createElement("img");
+  img.src = imgSrc;
+  var profileImg = document.getElementById("profileImg");
+  profileImg.appendChild(img);
+}
+function displayEditedUser(users, index) {
+  var user = users[index];
+
+  document.getElementById("Name").textContent += user.userName;
+  document.getElementById("userFirstName").textContent += user.userFirstName;
+  document.getElementById("userLastName").textContent += user.userLastName;
+  document.getElementById("pw").textContent += user.pw;
+  document.getElementById("Name1").textContent += user.userName;
+  document.getElementById("Email").textContent += user.email;
+  document.getElementById("Email1").textContent += user.email;
+  document.getElementById("DateOfBirth").textContent += user.DateOfBirth;
+  document.getElementById("city").textContent += user.CityName;
+  document.getElementById("StreetAddress").textContent += user.StreetAddress;
+  document.getElementById("postBox").textContent += user.PostBox;
+
+ 
 }
 function saveDetails() {
   var userName = document.getElementById("Name").innerHTML;
@@ -86,10 +99,9 @@ function saveDetails() {
   var StreetAddress = document.getElementById("StreetAddress").innerHTML;
   var PostBox = document.getElementById("postBox").innerHTML;
   var email = document.getElementById("Email").innerHTML;
-  var file = 0;
+  var file = users1[index].file;
   var pw = document.getElementById("pw").innerHTML;
-  var pw2 = document.getElementById("pw").innerHTML;
-
+  var pw2 = document.getElementById("pw2").innerHTML;
   let newUser = new User(
     userName,
     userFirstName,
@@ -107,4 +119,35 @@ function saveDetails() {
   localStorage.setItem(`users`, JSON.stringify(users1));
   alert("your details has Updated sucssesfully");
   displayEditedUser(users1, index);
+}
+
+/************************************* */
+function changeProfileImage() {
+  var imageInput = document.getElementById("imageInput");
+  var profileImg = document.getElementById("profileImg");
+
+  // Check if a file is selected
+  if (imageInput.files && imageInput.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      // Create an <img> element and set the image source
+      var img = document.createElement("img");
+      img.src = e.target.result;
+      img.alt = "Profile Image";
+
+      // Clear the previous content and append the new image
+      profileImg.innerHTML = "";
+      profileImg.appendChild(img);
+      user = users1[index];
+    };
+    // Read the selected file as a data URL
+    reader.readAsDataURL(imageInput.files[0]);
+    alert(`"Image changed successfully."`);
+  }
+}
+
+
+function redirectToPage() {
+  window.location.href = "../flappyBirdGame/game.html";
 }

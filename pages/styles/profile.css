@@ -23,18 +23,11 @@ body {
     width: 100%;
   }
   
-  .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
+
   .profile-header {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: space-evenly;
+    margin-bottom: 150px;
   }
   
   .profile-info {
@@ -66,10 +59,10 @@ body {
   }
   
   .stat {
-    flex-basis: 30%;
+    flex-basis: 25%;
     padding: 10px;
     background-color: #34495e;
-    border-radius: 5px;
+    border-radius: 15px;
   }
   
   .stat h4 {
@@ -184,3 +177,64 @@ body {
   background-color: #fff;
   color: #1B2838;
 }
+
+
+ .avatar,#profileImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: -10%;
+}
+
+.img-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first baseline;
+  min-width:200px;
+  min-height:200px;
+
+}
+#img-button{
+  width: 200px;
+  padding: 5px;
+} 
+#imageInput {
+  margin-top: 155px;
+
+}
+
+
+.sign-out-div {
+  text-align: right;
+}
+
+.sign-out-btn,#playGame {
+  width: 110px;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #ffffff;
+}
+.sign-out-btn{
+background-color: #ff0000;
+}
+#playGame {
+background-color: #0000ff;
+
+}
+.sign-out-btn:hover {
+  background-color: #cc0000;
+}
+#playGame:hover {
+  background-color: #0000cc;
+  
+  }
+
+
+
+
+

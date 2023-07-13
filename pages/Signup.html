@@ -41,7 +41,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="form-container">
 
         <form name='form-login' id="form" class="signup-form" onsubmit="store(event)">
             <h1>Create Your Steam Account</h1>
@@ -52,7 +52,7 @@
             <select id="locality-dropdown" type="text" aria-placeholder="city name" name="locality">
             </select>
             <input type="text" id="StreetAddress" placeholder="רחוב בן גוריון">
-            <input type="number" id="PostBox" placeholder="PostBox">
+            <input type="number" id="PostBox" placeholder="Street Number">
             <input type="email" id="email" placeholder="Email">
             <input type="file" id="file" placeholder="image: jpeg/jpg only" accept=".jpg, .jpeg">
             <input type="password" id="pw" placeholder="Password">
@@ -61,10 +61,13 @@
             <p class="login-link">Already have an account? <a href="./login.html">Sign in</a></p>
             <ul class="helper-text">
                 <h3>Password:</h3>
-                <li class="length">Must be at least 7 characters long. and Maximum 12characters long.</li>
-                <li class="lowercase">Must contain a lowercase letter.</li>
+                <li class="length">Must be Maximum 12 characters long.</li>
+                <li class="length">Must be at least 7 characters long </li>
                 <li class="uppercase">Must contain an uppercase letter.</li>
-                <li class="special">Must contain a number or special character.</li>
+                <li class="lowercase">Must contain a lowercase letter.</li>
+                <li class="special">Must contain a special character.</li>
+                <li class="special">Must contain a number.</li>
+
             </ul>
         </form>
     </div>

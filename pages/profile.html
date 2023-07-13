@@ -45,8 +45,11 @@
     <div class="profile-container">
         <div class="profile">
             <div class="profile-header">
-                <img src="../images/man.jpg" alt="Avatar" class="avatar">
-                <div id="profileImg"></div>
+             <div class="img-container">
+                 <div id="profileImg"></div>
+                 <input type="file" id="imageInput">
+                 <button id="img-button" onclick="changeProfileImage()">Change Image</button>
+             </div>
                 <div class="profile-info">
                     <h1 class="name" id="Name1"></h1>
                     <h3 class="FamilyName" id="Email1"></h3>
@@ -55,6 +58,10 @@
                 </div>
                 <div class="settings-icon">
                     <a href="./setings.html"> <i id="settings-icon" class="fa fa-cog"></i></a>
+                </div>
+                <div class="sign-out-div">
+                <button class="sign-out-btn" onclick="localStorageClean()">Sign Out</button>
+                <button id="playGame" onclick="redirectToPage()">Play Game</button>
                 </div>
             </div>
             <div class="game-stats">

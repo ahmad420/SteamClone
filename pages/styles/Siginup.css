@@ -38,7 +38,7 @@ body {
 
 }
   
-  .container {
+  .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@ body {
   .signup-form input[type="date"],
   .signup-form input[type="number"],
   .signup-form input[type="file"],
-  select
+  select,#rgstr_btn
    {
     width: 100%;
     padding: 10px;
@@ -83,7 +83,15 @@ body {
   .signup-form input[type="file"]{
     background-color: #fff;
   }
-  
+  #rgstr_btn{
+background-color: #0096cc;
+color: white;
+  }
+  #rgstr_btn:hover{
+    background-color: white;
+    color: #0096cc;
+    cursor: pointer;
+      }
   .signup-form button {
     background-color: #00adee;
     border: none;
@@ -96,9 +104,7 @@ body {
     transition: background-color 0.3s ease-in-out;
   }
   
-  .signup-form button:hover {
-    background-color: #0096cc;
-  }
+ 
   
   .login-link {
     color: #fff;
@@ -112,18 +118,21 @@ body {
   }
   
   .login-link a:hover {
-    text-decoration: underline;
+    text-decoration: underline #00adee;
+    color: white;
+    font-weight: bolder;
   }
   
   /* Media Queries */
   @media only screen and (max-width: 480px) {
-    .container {
+    .form-container {
       height: auto;
       padding: 20px;
+      margin: 0;
     }
   
     .signup-form {
-      min-width: 100vw;
+      min-width: 80vw;
       width: 00%;
       border-radius: 0;
       padding: 50px 20px;
