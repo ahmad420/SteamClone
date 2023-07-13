@@ -1,4 +1,4 @@
-let itemsData = JSON.parse(localStorage.getItem("itemsData")) || new Array();
+let itemsData = JSON.parse(localStorage.getItem("itemsData")) || new Array([]);
 let renderdflag = true;
 if (renderdflag) {
   itemsData = [
