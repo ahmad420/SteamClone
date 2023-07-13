@@ -86,7 +86,6 @@ body {
   #rgstr_btn{
 background-color: #0096cc;
 color: white;
-width: 105%;
   }
   #rgstr_btn:hover{
     background-color: white;
@@ -105,9 +104,7 @@ width: 105%;
     transition: background-color 0.3s ease-in-out;
   }
   
-  .signup-form button:hover {
-    background-color: #0096cc;
-  }
+ 
   
   .login-link {
     color: #fff;
@@ -121,7 +118,9 @@ width: 105%;
   }
   
   .login-link a:hover {
-    text-decoration: underline;
+    text-decoration: underline #00adee;
+    color: white;
+    font-weight: bolder;
   }
   
   /* Media Queries */
@@ -129,10 +128,11 @@ width: 105%;
     .form-container {
       height: auto;
       padding: 20px;
+      margin: 0;
     }
   
     .signup-form {
-      min-width: 100vw;
+      min-width: 80vw;
       width: 00%;
       border-radius: 0;
       padding: 50px 20px;
