@@ -146,3 +146,8 @@ function changeProfileImage() {
     alert(`"Image changed successfully."`);
   }
 }
+
+
+function redirectToPage() {
+  window.location.href = "../flappyBirdGame/game.html";
+}

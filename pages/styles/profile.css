@@ -203,3 +203,38 @@ body {
   margin-top: 155px;
 
 }
+
+
+.sign-out-div {
+  text-align: right;
+}
+
+.sign-out-btn,#playGame {
+  width: 110px;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #ffffff;
+}
+.sign-out-btn{
+background-color: #ff0000;
+}
+#playGame {
+background-color: #0000ff;
+
+}
+.sign-out-btn:hover {
+  background-color: #cc0000;
+}
+#playGame:hover {
+  background-color: #0000cc;
+  
+  }
+
+
+
+
+
