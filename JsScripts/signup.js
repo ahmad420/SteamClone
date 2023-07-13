@@ -136,7 +136,8 @@ function createUser(
   fileData,
   pw,
   pw2
-) {
+) 
+{
   const newUser = new User(
     userName,
     userFirstName,
@@ -207,8 +208,6 @@ function isUserNameExists(userName) {
 
   return false; // שם המשתמש לא קיים
 }
-
-
 function validatePassword(pw) {
   if (pw.trim() === "") {
     alert("Please enter Password");
@@ -238,7 +237,6 @@ function validatePassword(pw) {
   }
   return true;
 }
-
 function validateEmail(email) {
   if (email.trim() === "") {
     alert("Please enter Email Address");
