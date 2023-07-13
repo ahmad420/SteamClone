@@ -52,11 +52,48 @@ function store(event) {
   const fileInput = document.getElementById("file");
   const pw = document.getElementById("pw").value;
   const pw2 = document.getElementById("pw2").value;
-
-  if (pw.length < 7 || pw.length > 12) {
-    alert("The password length must be between 7-12");
+ 
+ 
+  if (userName.trim() === "") {
+    alert("Please enter a User Name");
     return false;
   }
+  if (userFirstName.trim() === "") {
+    alert("Please enter First Name");
+    return false;
+  }
+  if (userLastName.trim() === "") {
+    alert("Please enter Last Name");
+    return false;
+  }
+  if (DateOfBirth.trim() === "") {
+    alert("Please enter Birth Date");
+    return false;
+  }
+  if (StreetAddress.trim() === "") {
+    alert("Please enter Street Address");
+    return false;
+  }
+  if (PostBox.trim() === "") {
+    alert("Please enter Post Box");
+    return false;
+  }
+  if (email.trim() === "") {
+    alert("Please enter Email Address");
+    return false;
+  }
+
+  if (pw.trim() === "") {
+    alert("Please enter Password");
+    return false;
+  }
+  if (pw.trim() === "") {
+    alert("Please repeat the Password");
+    return false;
+  }
+
+
+ 
   if (users.some((user) => user.email === email)) {
     alert("This Email is already in use");
     return false;
@@ -67,10 +104,6 @@ function store(event) {
     return false;
   }
 
-  if (pw !== pw2) {
-    alert("Passwords do not match");
-    return false;
-  }
 
   if (containsNumber(userLastName) || containsNumber(userFirstName)) {
     alert("User first name and last name must not contain numbers");
@@ -79,6 +112,14 @@ function store(event) {
 
   if (!validateEmail(email)) {
     alert("The email address is not valid");
+    return false;
+  }
+  if (!validatePassword(pw)) {
+    alert("The Password is not valid");
+    return false;
+  }
+  if (pw !== pw2) {
+    alert("Passwords do not match");
     return false;
   }
 
@@ -92,20 +133,7 @@ function store(event) {
     return false;
   }
 
-  if (!/\d/.test(pw)) {
-    alert("Your password needs a number");
-    return false;
-  }
 
-  if (!/[A-Z]/.test(pw)) {
-    alert("Your password needs an uppercase letter");
-    return false;
-  }
-
-  if (!/[a-z]/.test(pw)) {
-    alert("Your password needs a lowercase letter");
-    return false;
-  }
 
    // Read the image file as a data URL
    const reader = new FileReader();
@@ -135,6 +163,31 @@ reader.readAsDataURL(fileInput.files[0]);
 }
 
 /// valdation functions
+function validatePassword(pw) {
+  if (!/\d/.test(pw)) {
+    alert("Your password needs a number");
+    return false;
+  }
+
+  if (!/[A-Z]/.test(pw)) {
+    alert("Your password needs an uppercase letter");
+    return false;
+  }
+
+  if (!/[a-z]/.test(pw)) {
+    alert("Your password needs a lowercase letter");
+    return false;
+  }
+  if (!/[^a-zA-Z0-9]/.test(pw)) {
+    alert("Your password needs a special character");
+    return false;
+  }
+  if (pw.length < 7 || pw.length > 12) {
+    alert("The password length must be between 7-12");
+    return false;
+  }
+  return true;
+}
 function isUpper(str) {
   return /[A-Z]/.test(str);
 }
