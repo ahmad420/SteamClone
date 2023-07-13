@@ -49,7 +49,7 @@ function store(event) {
   const StreetAddress = document.getElementById("StreetAddress").value;
   const PostBox = document.getElementById("PostBox").value;
   const email = document.getElementById("email").value;
-  const file = document.getElementById("file").value;
+  const fileInput = document.getElementById("file");
   const pw = document.getElementById("pw").value;
   const pw2 = document.getElementById("pw2").value;
 
@@ -107,6 +107,12 @@ function store(event) {
     return false;
   }
 
+   // Read the image file as a data URL
+   const reader = new FileReader();
+   reader.onload = function (event) {
+     const fileData = event.target.result;
+
+
   const newUser = new User(
     userName,
     userFirstName,
@@ -116,7 +122,7 @@ function store(event) {
     StreetAddress,
     PostBox,
     email,
-    file,
+    fileData,
     pw,
     pw2
   );
@@ -124,6 +130,8 @@ function store(event) {
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
   alert("Your account has been created successfully. You can now log in.");
+}
+reader.readAsDataURL(fileInput.files[0]);
 }
 
 /// valdation functions
