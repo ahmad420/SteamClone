@@ -87,7 +87,7 @@ if (renderdflag) {
       image: "../images/assetto.jpg",
     },
   ];
-  // localStorage.setItem("itemsData", JSON.stringify(itemsData));
+  localStorage.setItem("itemsData", JSON.stringify(itemsData));
   renderdflag = false;
 }
 

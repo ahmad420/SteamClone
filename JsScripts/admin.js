@@ -197,3 +197,19 @@ function deleteUser() {
 }
 let deleteUserBtn = document.getElementById("deleteUserBtn");
 deleteUserBtn.addEventListener("click", deleteUser);
+
+
+
+document.getElementById("addItemBtn").addEventListener("click", function() {
+  window.location.href = "../pages/addNewItem.html"; // הפניה לדף HTML הרצוי
+});
+
+
+
+document.getElementById("getItemBtn").addEventListener("click", function() {
+  window.location.href = "../pages/items.html"; // הפניה לדף HTML הרצוי
+});
+
+
+
+
