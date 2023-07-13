@@ -186,11 +186,28 @@ if (!usernameRegex.test(userName)) {
   console.log("Username should contain only alphanumeric characters, spaces, dashes, and underscores, and should include at least one letter.");
   return false;
 }
+if (isUserNameExists(userName)) {
+  alert("This User Name is already in use");
+  return false;
+}
 
 return true;  
 
 
 }
+function isUserNameExists(userName) {
+  const arr = JSON.parse(localStorage.getItem("users"));
+
+  // בדיקה האם שם המשתמש כבר קיים במאגר הנתונים
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].userName === userName) {
+      return true; // שם המשתמש כבר קיים
+    }
+  }
+
+  return false; // שם המשתמש לא קיים
+}
+
 
 function validatePassword(pw) {
   if (pw.trim() === "") {
