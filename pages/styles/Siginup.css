@@ -38,7 +38,7 @@ body {
 
 }
   
-  .container {
+  .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@ body {
   .signup-form input[type="date"],
   .signup-form input[type="number"],
   .signup-form input[type="file"],
-  select
+  select,#rgstr_btn
    {
     width: 100%;
     padding: 10px;
@@ -83,7 +83,16 @@ body {
   .signup-form input[type="file"]{
     background-color: #fff;
   }
-  
+  #rgstr_btn{
+background-color: #0096cc;
+color: white;
+width: 105%;
+  }
+  #rgstr_btn:hover{
+    background-color: white;
+    color: #0096cc;
+    cursor: pointer;
+      }
   .signup-form button {
     background-color: #00adee;
     border: none;
@@ -117,7 +126,7 @@ body {
   
   /* Media Queries */
   @media only screen and (max-width: 480px) {
-    .container {
+    .form-container {
       height: auto;
       padding: 20px;
     }
