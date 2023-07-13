@@ -16,31 +16,30 @@ function check(event) {
   ///saving all passowrds and user names in arrays
   for (var i = 0; i < arr.length; i++) {
     arrayOfUserNames[i] = arr[i].userName;
-  }
-  for (var i = 0; i < arr.length; i++) {
     arrayOfPw[i] = arr[i].pw;
   }
   ///////////////////////////////////////////////
 
-  var flag = false;
+  var isLoggedIn  = false;
   /// cheking if user name and passoword is correct
   for (var i = 0; i < arrayOfUserNames.length; i++) {
     if (LoginUserName == arrayOfUserNames[i]) {
       if (LoginPassoword == arrayOfPw[i]) {
-        flag = true;
+        isLoggedIn  = true;
         alert("You are logged in.");
+        sessionStorage.setItem("isLoggedIn", true); 
         sessionStorage.setItem(`user`, JSON.stringify(arr[i]));
         location.replace("../pages/profile.html");
-
         return;
-      } else {
+      } 
+      else {
         alert("Your Password is Wrong");
         return;
       }
     }
   }
   //////If the user name is wrong
-  if (flag == false) {
+  if (!isLoggedIn) {
     alert("Your User Name  is Wrong");
     return;
   }

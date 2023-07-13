@@ -155,9 +155,8 @@ function renderItems() {
     addToCartBtn.className = "btn btn-primary";
     addToCartBtn.textContent = "Add to Cart";
     addToCartBtn.addEventListener("click", () => {
-      let isLoggedIn = false; // Replace with your logic to check if the user is logged in
-
-      if (isLoggedIn) {
+      var isLoggedIn = sessionStorage.getItem("isLoggedIn");
+      if (isLoggedIn==="true") {
         addToCart(item);
       } else {
         // Display a message or redirect the user to the login page
