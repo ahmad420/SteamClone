@@ -154,7 +154,17 @@ function renderItems() {
     const addToCartBtn = document.createElement("button");
     addToCartBtn.className = "btn btn-primary";
     addToCartBtn.textContent = "Add to Cart";
-    addToCartBtn.addEventListener("click", () => addToCart(item));
+    addToCartBtn.addEventListener("click", () => {
+      let isLoggedIn = false; // Replace with your logic to check if the user is logged in
+
+      if (isLoggedIn) {
+        addToCart(item);
+      } else {
+        // Display a message or redirect the user to the login page
+        alert("Please log in to add items to your cart.");
+        window.location.href = "../pages/Login.html"; // Redirect to the login page
+      }
+    });
 
     cardBody.appendChild(title);
     cardBody.appendChild(price);

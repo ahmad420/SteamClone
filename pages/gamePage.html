@@ -66,7 +66,7 @@
                         <li>Graphics: NVIDIA GTX 970</li>
                         <li>Storage: 50 GB available space</li>
                     </ul>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <button onclick="mustLogin()"  class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -112,7 +112,14 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function mustLogin()
+{
+  alert("you have To Login First \n You Can creat Acount If Its You First Time ");
+  location.replace('./Login.html')
+}
 
+</script>
 </body>
 
 </html>
