@@ -108,7 +108,35 @@ function store(event) {
    const reader = new FileReader();
    reader.onload = function (event) {
      const fileData = event.target.result;
-
+     createUser(
+      userName,
+      userFirstName,
+      userLastName,
+      DateOfBirth,
+      CityName,
+      StreetAddress,
+      PostBox,
+      email,
+      fileData,
+      pw,
+      pw2
+    );
+  };
+  reader.readAsDataURL(fileInput.files[0]);
+}
+function createUser(
+  userName,
+  userFirstName,
+  userLastName,
+  DateOfBirth,
+  CityName,
+  StreetAddress,
+  PostBox,
+  email,
+  fileData,
+  pw,
+  pw2
+) {
   const newUser = new User(
     userName,
     userFirstName,
@@ -127,9 +155,6 @@ function store(event) {
   localStorage.setItem("users", JSON.stringify(users));
   alert("Your account has been created successfully. You can now log in.");
 }
-reader.readAsDataURL(fileInput.files[0]);
-}
-
 /// valdation functions
 function validateFileInput(fileInput) {
 if (fileInput.files.length === 0) {
