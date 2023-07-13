@@ -53,93 +53,61 @@ function store(event) {
   const pw = document.getElementById("pw").value;
   const pw2 = document.getElementById("pw2").value;
  
+  if (!validateUserName(userName)){
+    return false;
+  }
+
+  if (!validateUserFirstName(userFirstName)){
+    return false;
+  }
+
+  if (!validateUserLastName(userLastName)){
+    return false;
+  }
  
-  if (userName.trim() === "") {
-    alert("Please enter a User Name");
+  if (!validateBirthDate(DateOfBirth)) {
     return false;
   }
-  if (userFirstName.trim() === "") {
-    alert("Please enter First Name");
-    return false;
-  }
-  if (userLastName.trim() === "") {
-    alert("Please enter Last Name");
-    return false;
-  }
-  if (DateOfBirth.trim() === "") {
-    alert("Please enter Birth Date");
-    return false;
-  }
-  if (StreetAddress.trim() === "") {
-    alert("Please enter Street Address");
-    return false;
-  }
-  if (PostBox.trim() === "") {
-    alert("Please enter Post Box");
-    return false;
-  }
-  if (email.trim() === "") {
-    alert("Please enter Email Address");
-    return false;
-  }
+  ////city name validation 
+  
+   if (!validateStreetAddress(StreetAddress)) {
+     return false;
+   }
 
-  if (pw.trim() === "") {
-    alert("Please enter Password");
+  if (!validatePostBox(PostBox)){
     return false;
   }
-  if (pw.trim() === "") {
-    alert("Please repeat the Password");
-    return false;
-  }
-
-
  
+  if (!validateEmail(email)) {
+    return false;
+  }
+
   if (users.some((user) => user.email === email)) {
     alert("This Email is already in use");
     return false;
   }
 
-  if (userName.length > 60) {
-    alert("The UserName is too long");
+  if (! validateFileInput(fileInput)){
     return false;
   }
 
-
-  if (containsNumber(userLastName) || containsNumber(userFirstName)) {
-    alert("User first name and last name must not contain numbers");
-    return false;
-  }
-
-  if (!validateEmail(email)) {
-    alert("The email address is not valid");
-    return false;
-  }
   if (!validatePassword(pw)) {
-    alert("The Password is not valid");
     return false;
   }
+  if (pw2.trim() === "") {
+    alert("Please repeat the Password");
+    return false;
+  }
+  
   if (pw !== pw2) {
     alert("Passwords do not match");
     return false;
   }
-
-  if (!cheekHebrewValidation(StreetAddress)) {
-    alert("The street address must be in Hebrew");
-    return false;
-  }
-
-  if (PostBox < 0) {
-    alert("Post box number cannot be negative");
-    return false;
-  }
-
-
-
+ 
    // Read the image file as a data URL
    const reader = new FileReader();
    reader.onload = function (event) {
      const fileData = event.target.result;
-
 
   const newUser = new User(
     userName,
@@ -163,7 +131,47 @@ reader.readAsDataURL(fileInput.files[0]);
 }
 
 /// valdation functions
+function validateFileInput(fileInput) {
+if (fileInput.files.length === 0) {
+  alert("Please select a file");
+  return false;
+}
+
+const selectedFile = fileInput.files[0];
+const fileName = selectedFile.name;
+
+if (!fileName.toLowerCase().endsWith(".jpg") && !fileName.toLowerCase().endsWith(".jpeg")) {
+  alert("Please select a JPEG or JPG file");
+  return false;
+}
+return true;
+}
+function validateUserName(userName) {
+  if (userName.trim() === "") {
+    alert("Please enter a User Name");
+    return false;
+  }
+  if (userName.length > 60) {
+    console.log("Username should not exceed 60 characters.");
+    return false;
+  }
+  
+  const usernameRegex = /^[A-Za-z0-9\s\-_]*[A-Za-z][A-Za-z0-9\s\-_]*$/;
+if (!usernameRegex.test(userName)) {
+  console.log("Username should contain only alphanumeric characters, spaces, dashes, and underscores, and should include at least one letter.");
+  return false;
+}
+
+return true;  
+
+
+}
+
 function validatePassword(pw) {
+  if (pw.trim() === "") {
+    alert("Please enter Password");
+    return false;
+  }
   if (!/\d/.test(pw)) {
     alert("Your password needs a number");
     return false;
@@ -188,20 +196,27 @@ function validatePassword(pw) {
   }
   return true;
 }
-function isUpper(str) {
-  return /[A-Z]/.test(str);
-}
-function hasLowerCase(str) {
-  return /[a-z]/.test(str);
-}
-function containsNumber(str) {
-  return /\d/.test(str);
-}
 
-function cheekHebrewValidation(str) {
-  return /[\u0590-\u05FF]/.test(str);
-}
+function validateEmail(email) {
+  if (email.trim() === "") {
+    alert("Please enter Email Address");
+    return false;
+  }
+  if (email.indexOf("@") === -1) {
+    return false; // אין תו @ באימייל
+  }
 
+  if (email.indexOf(".") === -1) {
+    return false; // אין נקודה באימייל
+  }
+
+  const domain = email.split("@")[1];
+  if (domain.indexOf(".") === -1) {
+    return false; // הדומיין אינו תקף (אין נקודה)
+  }
+  return true;
+
+}
 function emailAvilabityCheek(email, arr) {
   for (var i = 0; i < arr.length; i++) {
     if (arr[i].email == email) {
@@ -210,16 +225,69 @@ function emailAvilabityCheek(email, arr) {
   }
   return true;
 }
-
-function validateEmail(email) {
-  const regex_pattern =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[c+o+m]{2,}))$/;
-
-  if (regex_pattern.test(email)) {
-    return true;
-  } else {
+function validateBirthDate(DateOfBirth) {
+  if (DateOfBirth.trim() === "") {
+    alert("Please enter Birth Date");
     return false;
   }
+  return true;
+}
+function validateStreetAddress(StreetAddress) {
+
+if (StreetAddress.trim() === "") {
+  alert("Please enter Street Address");
+  return false;
+}
+if (!cheekHebrewValidation(StreetAddress)) {
+  alert("The street address must be in Hebrew");
+  return false;
+}
+
+return true;
+
+}
+function cheekHebrewValidation(str) {
+  return /[\u0590-\u05FF]/.test(str);
+}
+function validatePostBox(PostBox) {
+  if (PostBox.trim() === "") {
+    alert("Please enter Post Box");
+    return false;
+  }
+  if (PostBox<0) {
+    alert("number must be positive");
+    return false;
+  }
+ 
+ 
+  return true;
+}
+function validateUserFirstName(userFirstName) {
+  if (userFirstName.trim() === "") {
+    alert("Please enter First Name");
+    return false;
+  }
+  if (containsNumber(userFirstName)) {
+    alert("User first name  must not contain numbers");
+    return false;
+  }
+  return true;
+}
+function containsNumber(str) {
+  return /\d/.test(str);
+}
+function validateUserLastName(userLastName) {
+  
+  if (userLastName.trim() === "") {
+    alert("Please enter Last Name");
+    return false;
+  }
+  if (containsNumber(userLastName)) {
+    alert("User last name must not contain numbers");
+    return false;
+  }
+
+  return true;
 }
 
 // //  form date getter
@@ -233,12 +301,10 @@ function validateEmail(email) {
 // if (mm < 10) {
 //   mm = "0" + mm;
 // }
-
 // today = yyyy + "-" + mm + "-" + dd;
 // document.getElementById("DateOfBirth").setAttribute("max", today);
 
 /// cites jason file dropdown
-
 async function getCites() {
   let dropdown = document.getElementById("locality-dropdown");
   dropdown.length = 0;
