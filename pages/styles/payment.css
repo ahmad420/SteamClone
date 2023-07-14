@@ -30,6 +30,7 @@
     overflow: hidden;
     z-index: 1;
     border-radius: 6px;
+    color: aqua;
     box-shadow: 0 15px 24px rgba(37, 44, 65, 0.32);
 
   }

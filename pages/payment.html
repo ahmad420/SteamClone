@@ -48,8 +48,8 @@
       <img src="https://images.pexels.com/photos/556663/pexels-photo-556663.jpeg" class="imgResumen">
 
       <div class="totalTxt">
-        
-        <h3 style="color: #a9abae" id="total">$6.000</h3>
+
+        <h3 style="color: #a9abae" id="total"></h3>
       </div>
 
     </div>
@@ -73,12 +73,12 @@
       <br>
       <div style="width: 100%;margin: auto;">
         <div style="width: 50%;display: inline-block;"><b>Cardholder</b></div>
-        <input type="text" id="pagarTarjetaTit" placeholder="Cardholder" maxlength="16" style="width: 100%">
+        <input type="text" id="pagarTarjetaTit" placeholder="jouhn doe" maxlength="16" style="width: 100%">
       </div>
 
       <div style="width: 100%;margin: auto;">
         <div style="width: 50%;display: inline-block;"><b>Card Number</b></div>
-        <input type="text" id="pagarTarjetaNum" placeholder="Eg. 1111222233334444" style="width: 100%" maxlength="16"
+        <input type="text" id="pagarTarjetaNum" placeholder="0000-0000-0000-0000" style="width: 100%" maxlength="16"
           oninput="showCN()">
       </div>
 
@@ -88,12 +88,14 @@
         <div class="row">
           <div class="column">
             <div style="width: 100%;display: inline-block;"><b>Month</b></div>
-            <input type="number" id="pagarTarjetaMes" placeholder="Eg. 03" min="01" max="12" style="width: 80%"
+            <input type="number" id="pagarTarjetaMes" placeholder="03" min="01" max="12" style="width: 80%"
               oninput="showCE()">
+
+              
           </div>
           <div class="column">
             <div style="width: 100%;display: inline-block;"><b>Year</b></div>
-            <input type="number" id="pagarTarjetaAno" placeholder="Eg. 2024" min="2020" max="2100" style="width: 80%"
+            <input type="number" id="pagarTarjetaAno" placeholder="2024" min="2020" max="2030" style="width: 80%"
               oninput="showCE()">
           </div>
         </div>
@@ -101,13 +103,13 @@
 
       <div style="width: 100%;margin: auto;">
         <div style="width: 50%;display: inline-block;"><b>CVV</b></div>
-        <input type="number" id="pagarTarjetaCVV" placeholder="Eg. 123" min="001" max="9999" style="width: 50%"
+        <input type="number" id="pagarTarjetaCVV" placeholder="000" min="000" max="999" style="width: 50%"
           oninput="showCV()">
       </div>
 
-    <form action="./thanx.html">
-      <button title="Make payment">Make payment</button>
-    </form>
+      <form action="./thanx.html">
+        <button title="Make payment">Make payment</button>
+      </form>
 
     </div>
   </div>

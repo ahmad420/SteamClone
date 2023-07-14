@@ -1,3 +1,77 @@
+// Function to validate the payment form
+function validateForm(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form input values
+  var cardholder = document.getElementById("pagarTarjetaTit").value.trim();
+  var cardNumber = document.getElementById("pagarTarjetaNum").value.trim();
+  var expMonth = document.getElementById("pagarTarjetaMes").value.trim();
+  var expYear = document.getElementById("pagarTarjetaAno").value.trim();
+  var cvv = document.getElementById("pagarTarjetaCVV").value.trim();
+
+  // Perform validation
+  if (cardholder === "") {
+    alert("Please enter the cardholder's name.");
+    return;
+  }
+
+  if (cardNumber === "") {
+    alert("Please enter the card number.");
+    return;
+  }
+
+  if (!/^\d{4}\d{4}\d{4}\d{4}$/.test(cardNumber)) {
+    alert(
+      "Please enter a valid card number in the format: 0000-0000-0000-0000"
+    );
+    return;
+  }
+
+  if (expMonth === "" || expYear === "") {
+    alert("Please enter the card expiration date.");
+    return;
+  }
+
+  if (!/^\d{2}$/.test(expMonth) || !/^\d{4}$/.test(expYear)) {
+    alert("Please enter a valid expiration date.");
+    return;
+  }
+
+  var currentYear = new Date().getFullYear(); // Get the current year
+  var currentMonth = new Date().getMonth() + 1; // Get the current month (add 1 since it is zero-based)
+
+  if (
+    expYear < currentYear ||
+    (expYear === currentYear && expMonth < currentMonth) ||
+    expYear > 2030
+  ) {
+    alert(
+      "Please enter a valid expiration date between " +
+        currentMonth +
+        "/" +
+        currentYear +
+        " and 12/2030."
+    );
+    return;
+  }
+
+  if (cvv === "") {
+    alert("Please enter the CVV.");
+    return;
+  }
+
+  if (!/^\d{3}$/.test(cvv)) {
+    alert("Please enter a valid CVV.");
+    return;
+  }
+
+  // If all validations pass, submit the form
+  document.querySelector("form").submit();
+}
+
+// Attach the form validation function to the form's submit event
+document.querySelector("form").addEventListener("submit", validateForm);
+
 function showCN() {
   var i = document.getElementById("pagarTarjetaNum").value;
   document.getElementById("cardNumber").innerHTML = i;
