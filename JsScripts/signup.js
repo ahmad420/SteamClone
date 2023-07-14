@@ -168,8 +168,8 @@ function validateFileInput(fileInput) {
   const fileName = selectedFile.name;
 
   if (
-    !fileName.toLowerCase().endsWith(".jpg") &&
-    !fileName.toLowerCase().endsWith(".jpeg")
+    !fileName.toLowerCase().endsWith("jpg") &&
+    !fileName.toLowerCase().endsWith("jpeg")
   ) {
     alert("Please select a JPEG or JPG file");
     return false;
