@@ -1,6 +1,5 @@
-let itemsData;
-
-if (itemsData == null) {
+let itemsData = JSON.parse(localStorage.getItem("itemsData")) || [];
+if (itemsData.length === 0) {
   itemsData = [
     {
       id: 1,
