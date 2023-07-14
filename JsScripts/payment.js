@@ -1,3 +1,15 @@
+// Retrieve total price from the query parameter
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let totalPrice = urlParams.get("total");
+
+// Display payment details
+const paymentDetailsContainer = document.getElementById("payment-details");
+const total = document.getElementById("total");
+
+const totalText = document.createElement("p");
+const paymentMessage = document.createElement("p");
+
 function displayArrayFromLocalStorage() {
   // Retrieve the array from local storage
   const storedArray = JSON.parse(localStorage.getItem("items"));
@@ -17,7 +29,8 @@ function displayArrayFromLocalStorage() {
     storedArray.forEach((item) => {
       const liElement = document.createElement("li");
       liElement.className = "steam-list-item";
-      liElement.textContent = item.name + " : " + item.price + " ש "    +" quantity:"+item.quantity; // Access the name property of the object
+      liElement.textContent =
+        item.name + " : " + item.price + " ש " + " quantity:" + item.quantity; // Access the name property of the object
       ulElement.appendChild(liElement);
     });
 
@@ -99,6 +112,9 @@ function validateForm(event) {
 
   // If all validations pass, submit the form
   document.querySelector("form").submit();
+  localStorage.removeItem("items");
+  total = 0;
+  total.textContent = "Total Price: ש" + total;
 }
 
 // Attach the form validation function to the form's submit event
@@ -156,19 +172,8 @@ function showCV() {
   document.getElementById("cardCVV").innerHTML = i;
 }
 
-// Retrieve total price from the query parameter
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const totalPrice = urlParams.get("total");
-
-// Display payment details
-const paymentDetailsContainer = document.getElementById("payment-details");
-const total = document.getElementById("total");
-
-const totalText = document.createElement("p");
 total.textContent = "Total Price: ש" + totalPrice;
 
-const paymentMessage = document.createElement("p");
 paymentMessage.textContent = "Please proceed with your payment.";
 
 // paymentDetailsContainer.appendChild(totalText);
