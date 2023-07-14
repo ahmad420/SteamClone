@@ -70,6 +70,7 @@ function store(event) {
   }
   ////city name validation
   if (!validateCityNameFromList(CityName)) {
+    return false;
   }
 
   if (!validateStreetAddress(StreetAddress)) {
@@ -276,11 +277,17 @@ function validateBirthDate(DateOfBirth) {
   return true;
 }
 
- function validateCityNameFromList(CityName) {
-  if (CityName == null) return false;
-  if(CityName==="")
+function validateCityNameFromList(CityName) {
+  if (CityName == null) {
+    alert("city name is null Choose State/Province please");
 
-  return true
+    return false;
+  }
+  if (CityName === "Choose State/Province") {
+    alert("Choose State/Province please ");
+    return false;
+  }
+  return true;
   // console.log(CityName);
 
   // let cities = await getCities(); // Await the getCities() function to resolve the promise
@@ -288,15 +295,13 @@ function validateBirthDate(DateOfBirth) {
   // console.log(cities);
 
   // for (let i = 0; i < cities.length; i++) {
-   
+
   //   let city = cities[i];
   //   console.log(city);
   //   if (city.name === CityName) return true;
   // }
 
   // return false;
-
-
 }
 
 function validateStreetAddress(StreetAddress) {
@@ -320,7 +325,11 @@ function validatePostBox(PostBox) {
     return false;
   }
   if (PostBox < 0) {
-    alert("number must be positive");
+    alert("number cant be nigative");
+    return false;
+  }
+  if (PostBox > 250) {
+    alert("number must be less than 250");
     return false;
   }
 

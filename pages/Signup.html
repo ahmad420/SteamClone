@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../pages/styles/Siginup.css">
     <script src="../JsScripts/signup.js" defer></script>
-    
+
 </head>
 
 <body>
@@ -48,18 +48,18 @@
             <input type="text" id="userName" placeholder="Username">
             <input type="text" id="userFirstName" placeholder="First Name">
             <input type="text" id="userLastName" placeholder="Last Name">
-            <input id="DateOfBirth" type='date' placeholder="Date Of Birth" min='1902-01-01' max='2000-13-13'></input>
+            <input id="DateOfBirth" type='date' placeholder="Date Of Birth" min='1902-01-01' max='2023-07-14'></input>
             <select id="locality-dropdown" type="text" aria-placeholder="city name" name="locality">
             </select>
             <input type="text" id="StreetAddress" placeholder="רחוב בן גוריון">
-            <input type="number" id="PostBox" placeholder="Street Number">
+            <input type="number" id="PostBox" placeholder="Street Number" min="1">
             <input type="email" id="email" placeholder="Email">
             <input type="file" id="file" placeholder="image: jpeg/jpg only" accept=".jpg, .jpeg">
             <input type="password" id="pw" placeholder="Password">
-            <input type="password" id="pw2" placeholder="Password Repeat">
+            <input type="password" id="pw2" placeholder="confirm Password">
             <input id="rgstr_btn" type="submit" value="Register">
             <p class="login-link">Already have an account? <a href="./login.html">Sign in</a></p>
-            <ul class="helper-text">
+            <!-- <ul class="helper-text">
                 <h3>Password:</h3>
                 <li class="length">Must be Maximum 12 characters long.</li>
                 <li class="length">Must be at least 7 characters long </li>
@@ -68,7 +68,7 @@
                 <li class="special">Must contain a special character.</li>
                 <li class="special">Must contain a number.</li>
 
-            </ul>
+            </ul> -->
         </form>
     </div>
     <footer class="footer bg-dark text-white">
@@ -111,6 +111,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
+</body>
 
 </html>
