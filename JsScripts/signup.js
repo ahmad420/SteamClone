@@ -1,6 +1,4 @@
 let users = JSON.parse(localStorage.getItem("users")) || [];
-// import { getCites } from "../JsScripts/functions";
-// getCites();
 
 class User {
   constructor(

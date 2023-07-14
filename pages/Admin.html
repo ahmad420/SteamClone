@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../pages/styles/admin.css">
-<script src="../JsScripts/admin.js"defer></script>
+    <script src="../JsScripts/admin.js" defer></script>
 </head>
 
 <body>
@@ -71,133 +71,134 @@
             </div>
             <div class="card">
                 <div class="items-div">
-                <h2>All Items info </h2>
-                <button class="button" id="addItemBtn">Add Items</button>
-                <button class="button" id="getItemBtn">Get Items</button>
+                    <h2>All Items info </h2>
+                    <button class="button" id="addItemBtn">Add Items</button>
+                    <button class="button" id="getItemBtn">Get Items</button>
                 </div>
                 <h2>All the Users info </h2>
                 <div class="card-body">
-                         <button class="buttonTable button">Get Users</button>
-                        <button class="button" id="deleteUserBtn">Delete User</button>
-                        <button class="button" id="editBtn" onclick="editingUsers()" >Edit User</button>
-                        <div class="tableDiv">
-                            <div class="center" id="table">
-                                
-                            </div>
-                               
+                    <button class="buttonTable button">Get Users</button>
+                    <button class="button" id="deleteUserBtn">Delete User</button>
+                    <button class="button" id="editBtn" onclick="editingUsers()">Edit User</button>
+                    <div class="tableDiv">
+                        <div class="center" id="table">
+
                         </div>
-                       
+
                     </div>
-                    <h2>User info </h2>
-                    <div class="card bg-white">
-                        <div class="card-body">
-                        <button  id="editBtn" class="button" onclick="editingDetails()" >Edit</button>
+
+                </div>
+                <h2>User info </h2>
+                <div class="card bg-white">
+                    <div class="card-body">
+                        <button id="editBtn" class="button" onclick="editingDetails()">Edit</button>
                         <button class="saveBtn button" onclick="saveDetails()">Save Changes</button>
                         <table>
-                                <tbody>
-                                    <tr>
-                                        <td>Name</td>
-                                        <td>:</td>
-                                        <td id="Name"  contenteditable="false" ></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>First Name</td>
-                                        <td>:</td>
-                                        <td id="userFirstName"  contenteditable="false"></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Last Name</td>
-                                        <td>:</td>
-                                        <td id="userLastName"  contenteditable="false"></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Password</td>
-                                        <td>:</td>
-                                        <td id="pw" contenteditable="false"></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>:</td>
-                                        <td id="Email" contenteditable="false"></td>
-                                    </tr>
-            
-                                    <tr>
-                                        <td>Date Of Birth</td>
-                                        <td>:</td>
-                                        <td id="DateOfBirth" contenteditable="false"></td>
-                                    </tr>
-            
-                                    <tr>
-                                        <td>City</td>
-                                        <td>:</td>
-                                        <td id="city" contenteditable="false"></td>
-                                    </tr>
-            
-                                    <tr>
-                                        <td>Address</td>
-                                        <td>:</td>
-                                        <td id="StreetAddress"contenteditable="false"></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td>Post Box</td>
-                                        <td>:</td>
-                                        <td id="postBox"contenteditable="false"></td>
-                                    </tr>
-            
-                                    
-            
-                                </tbody>
-                            </table>
-                        </div>
-                        
-        </div>
-        </div>
-        
-    <footer class="footer bg-dark text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h5>Explore</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./store.html">Store</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h5>Follow</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.facebook.com/">Facebook</a></li>
-                        <li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin">Twitter</a></li>
-                        <li><a href="https://www.instagram.com/">Instagram</a></li>
-                        <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h5>Subscribe</h5>
-                    <p>Subscribe to our newsletter to get updates.</p>
-                    <form action="./thanx.html">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email address" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>:</td>
+                                    <td id="Name" contenteditable="false"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>First Name</td>
+                                    <td>:</td>
+                                    <td id="userFirstName" contenteditable="false"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Last Name</td>
+                                    <td>:</td>
+                                    <td id="userLastName" contenteditable="false"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td>:</td>
+                                    <td id="pw" contenteditable="false"></td>
+
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td id="Email" contenteditable="false"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Date Of Birth</td>
+                                    <td>:</td>
+                                    <td id="DateOfBirth" contenteditable="false"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>City</td>
+                                    <td>:</td>
+                                    <td id="city" contenteditable="false"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Address</td>
+                                    <td>:</td>
+                                    <td id="StreetAddress" contenteditable="false"></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Post Box</td>
+                                    <td>:</td>
+                                    <td id="postBox" contenteditable="false"></td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
-            <hr>
-            <div class="text-center">
-                <p>&copy; 2023 My Website. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            <footer class="footer bg-dark text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h5>Explore</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="./about.html">About</a></li>
+                                <li><a href="./store.html">Store</a></li>
+                                <li><a href="./services.html">Services</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <h5>Follow</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                                <li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flogin">Twitter</a>
+                                </li>
+                                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                                <li><a href="https://www.linkedin.com/feed/">LinkedIn</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <h5>Subscribe</h5>
+                            <p>Subscribe to our newsletter to get updates.</p>
+                            <form action="./thanx.html">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email address" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p>&copy; 2023 My Website. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
