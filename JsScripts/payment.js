@@ -1,4 +1,36 @@
+function displayArrayFromLocalStorage() {
+  // Retrieve the array from local storage
+  const storedArray = JSON.parse(localStorage.getItem("items"));
+  console.log(storedArray);
+  // Reference the HTML div element
+  const divElement = document.getElementById("resdiv");
+
+  // Clear the div contents
+  divElement.innerHTML = "";
+
+  // Check if the array exists in local storage
+  if (storedArray && Array.isArray(storedArray)) {
+    // Iterate over the array and create a list of details
+    const ulElement = document.createElement("ul");
+    ulElement.className = "steam-list";
+
+    storedArray.forEach((item) => {
+      const liElement = document.createElement("li");
+      liElement.className = "steam-list-item";
+      liElement.textContent = item.name + " : " + item.price + " ש "    +" quantity:"+item.quantity; // Access the name property of the object
+      ulElement.appendChild(liElement);
+    });
+
+    // Append the list to the div
+    divElement.appendChild(ulElement);
+  } else {
+    // Display a message if the array is not found in local storage
+    divElement.textContent = "no item in cart";
+  }
+}
+
 // Function to validate the payment form
+
 function validateForm(event) {
   event.preventDefault(); // Prevent form submission
 
@@ -139,5 +171,6 @@ total.textContent = "Total Price: ש" + totalPrice;
 const paymentMessage = document.createElement("p");
 paymentMessage.textContent = "Please proceed with your payment.";
 
-paymentDetailsContainer.appendChild(totalText);
-paymentDetailsContainer.appendChild(paymentMessage);
+// paymentDetailsContainer.appendChild(totalText);
+// paymentDetailsContainer.appendChild(paymentMessage);
+displayArrayFromLocalStorage();

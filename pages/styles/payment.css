@@ -148,6 +148,24 @@
     top: 50px;
   }
   
+  #resdiv{
+    margin-top: 100px;
+  }
+  .steam-list {
+    list-style: none;
+    padding: 0;
+    
+  }
+  
+  .steam-list-item {
+    background-color: #1b2838;
+    color: #c6d4df;
+    padding: 10px;
+    margin-bottom: 5px; 
+    border-radius: 4px;
+
+  }
+  
   @media screen and (max-width: 700px) {
     .column,
     .divPay {
