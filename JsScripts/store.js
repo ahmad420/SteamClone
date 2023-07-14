@@ -1,6 +1,6 @@
-let itemsData = JSON.parse(localStorage.getItem("itemsData")) || new Array([]);
-let renderdflag = true;
-if (renderdflag) {
+let itemsData;
+
+if (itemsData == null) {
   itemsData = [
     {
       id: 1,
@@ -156,7 +156,7 @@ function renderItems() {
     addToCartBtn.textContent = "Add to Cart";
     addToCartBtn.addEventListener("click", () => {
       var isLoggedIn = sessionStorage.getItem("isLoggedIn");
-      if (isLoggedIn==="true") {
+      if (isLoggedIn === "true") {
         addToCart(item);
       } else {
         // Display a message or redirect the user to the login page

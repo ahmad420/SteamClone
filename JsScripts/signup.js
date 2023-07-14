@@ -1,4 +1,4 @@
-let users = JSON.parse(localStorage.getItem("users")) || new Array();
+let users = JSON.parse(localStorage.getItem("users")) || [];
 // import { getCites } from "../JsScripts/functions";
 // getCites();
 
@@ -52,32 +52,34 @@ function store(event) {
   const fileInput = document.getElementById("file");
   const pw = document.getElementById("pw").value;
   const pw2 = document.getElementById("pw2").value;
- 
-  if (!validateUserName(userName)){
+
+  if (!validateUserName(userName)) {
     return false;
   }
 
-  if (!validateUserFirstName(userFirstName)){
+  if (!validateUserFirstName(userFirstName)) {
     return false;
   }
 
-  if (!validateUserLastName(userLastName)){
+  if (!validateUserLastName(userLastName)) {
     return false;
   }
- 
+
   if (!validateBirthDate(DateOfBirth)) {
     return false;
   }
-  ////city name validation 
-  
-   if (!validateStreetAddress(StreetAddress)) {
-     return false;
-   }
+  ////city name validation
+  if (!validateCityNameFromList(CityName)) {
+  }
 
-  if (!validatePostBox(PostBox)){
+  if (!validateStreetAddress(StreetAddress)) {
     return false;
   }
- 
+
+  if (!validatePostBox(PostBox)) {
+    return false;
+  }
+
   if (!validateEmail(email)) {
     return false;
   }
@@ -87,7 +89,7 @@ function store(event) {
     return false;
   }
 
-  if (! validateFileInput(fileInput)){
+  if (!validateFileInput(fileInput)) {
     return false;
   }
 
@@ -98,17 +100,17 @@ function store(event) {
     alert("Please repeat the Password");
     return false;
   }
-  
+
   if (pw !== pw2) {
     alert("Passwords do not match");
     return false;
   }
- 
-   // Read the image file as a data URL
-   const reader = new FileReader();
-   reader.onload = function (event) {
-     const fileData = event.target.result;
-     createUser(
+
+  // Read the image file as a data URL
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    const fileData = event.target.result;
+    createUser(
       userName,
       userFirstName,
       userLastName,
@@ -136,8 +138,7 @@ function createUser(
   fileData,
   pw,
   pw2
-) 
-{
+) {
   const newUser = new User(
     userName,
     userFirstName,
@@ -158,19 +159,22 @@ function createUser(
 }
 /// valdation functions
 function validateFileInput(fileInput) {
-if (fileInput.files.length === 0) {
-  alert("Please select a file");
-  return false;
-}
+  if (fileInput.files.length === 0) {
+    alert("Please select a file");
+    return false;
+  }
 
-const selectedFile = fileInput.files[0];
-const fileName = selectedFile.name;
+  const selectedFile = fileInput.files[0];
+  const fileName = selectedFile.name;
 
-if (!fileName.toLowerCase().endsWith(".jpg") && !fileName.toLowerCase().endsWith(".jpeg")) {
-  alert("Please select a JPEG or JPG file");
-  return false;
-}
-return true;
+  if (
+    !fileName.toLowerCase().endsWith(".jpg") &&
+    !fileName.toLowerCase().endsWith(".jpeg")
+  ) {
+    alert("Please select a JPEG or JPG file");
+    return false;
+  }
+  return true;
 }
 function validateUserName(userName) {
   if (userName.trim() === "") {
@@ -181,24 +185,24 @@ function validateUserName(userName) {
     console.log("Username should not exceed 60 characters.");
     return false;
   }
-  
+
   const usernameRegex = /^[A-Za-z0-9\s\-_]*[A-Za-z][A-Za-z0-9\s\-_]*$/;
-if (!usernameRegex.test(userName)) {
-  console.log("Username should contain only alphanumeric characters, spaces, dashes, and underscores, and should include at least one letter.");
-  return false;
-}
-if (isUserNameExists(userName)) {
-  alert("This User Name is already in use");
-  return false;
-}
+  if (!usernameRegex.test(userName)) {
+    console.log(
+      "Username should contain only alphanumeric characters, spaces, dashes, and underscores, and should include at least one letter."
+    );
+    return false;
+  }
+  if (isUserNameExists(userName)) {
+    alert("This User Name is already in use");
+    return false;
+  }
 
-return true;  
-
-
+  return true;
 }
 function isUserNameExists(userName) {
   const arr = JSON.parse(localStorage.getItem("users"));
-
+  if (arr == null) return false;
   // בדיקה האם שם המשתמש כבר קיים במאגר הנתונים
   for (var i = 0; i < arr.length; i++) {
     if (arr[i].userName === userName) {
@@ -255,7 +259,6 @@ function validateEmail(email) {
     return false; // הדומיין אינו תקף (אין נקודה)
   }
   return true;
-
 }
 function emailAvilabityCheek(email, arr) {
   for (var i = 0; i < arr.length; i++) {
@@ -272,19 +275,41 @@ function validateBirthDate(DateOfBirth) {
   }
   return true;
 }
+
+ function validateCityNameFromList(CityName) {
+  if (CityName == null) return false;
+  if(CityName==="")
+
+  return true
+  // console.log(CityName);
+
+  // let cities = await getCities(); // Await the getCities() function to resolve the promise
+
+  // console.log(cities);
+
+  // for (let i = 0; i < cities.length; i++) {
+   
+  //   let city = cities[i];
+  //   console.log(city);
+  //   if (city.name === CityName) return true;
+  // }
+
+  // return false;
+
+
+}
+
 function validateStreetAddress(StreetAddress) {
+  if (StreetAddress.trim() === "") {
+    alert("Please enter Street Address");
+    return false;
+  }
+  if (!cheekHebrewValidation(StreetAddress)) {
+    alert("The street address must be in Hebrew");
+    return false;
+  }
 
-if (StreetAddress.trim() === "") {
-  alert("Please enter Street Address");
-  return false;
-}
-if (!cheekHebrewValidation(StreetAddress)) {
-  alert("The street address must be in Hebrew");
-  return false;
-}
-
-return true;
-
+  return true;
 }
 function cheekHebrewValidation(str) {
   return /[\u0590-\u05FF]/.test(str);
@@ -294,12 +319,11 @@ function validatePostBox(PostBox) {
     alert("Please enter Post Box");
     return false;
   }
-  if (PostBox<0) {
+  if (PostBox < 0) {
     alert("number must be positive");
     return false;
   }
- 
- 
+
   return true;
 }
 function validateUserFirstName(userFirstName) {
@@ -317,7 +341,6 @@ function containsNumber(str) {
   return /\d/.test(str);
 }
 function validateUserLastName(userLastName) {
-  
   if (userLastName.trim() === "") {
     alert("Please enter Last Name");
     return false;
