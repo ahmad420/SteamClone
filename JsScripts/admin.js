@@ -179,10 +179,13 @@ function saveDetails(foo) {
   if (!validatePostBox(PostBox)){
     return false;
   }
- 
-  if (!validatePassword(pw)) {
+  
+  if (!validateCityNameFromList(CityName)) {
     return false;
   }
+  
+ 
+
 
   let newUser = new User(
     userName,
@@ -239,35 +242,6 @@ document.getElementById("getItemBtn").addEventListener("click", function() {
 
 
 /// valdation functions
-  function validatePassword(pw) {
-    if (pw.trim() === "") {
-      alert("Please enter Password");
-      return false;
-    }
-    if (!/\d/.test(pw)) {
-      alert("Your password needs a number");
-      return false;
-    }
-  
-    if (!/[A-Z]/.test(pw)) {
-      alert("Your password needs an uppercase letter");
-      return false;
-    }
-  
-    if (!/[a-z]/.test(pw)) {
-      alert("Your password needs a lowercase letter");
-      return false;
-    }
-    if (!/[^a-zA-Z0-9]/.test(pw)) {
-      alert("Your password needs a special character");
-      return false;
-    }
-    if (pw.length < 7 || pw.length > 12) {
-      alert("The password length must be between 7-12");
-      return false;
-    }
-    return true;
-  }
   function validateBirthDate(DateOfBirth) {
     if (DateOfBirth.trim() === "") {
       alert("Please enter Birth Date");
@@ -332,4 +306,27 @@ document.getElementById("getItemBtn").addEventListener("click", function() {
   
     return true;
   }
+    function validateCityNameFromList(CityName) {
+      if (CityName.length === 0 ) {
+        alert("Please enter city name");
+        return false;
+      }
+    
+      return true;
+    
+    
+    // console.log(CityName);
   
+    // let cities = await getCities(); // Await the getCities() function to resolve the promise
+  
+    // console.log(cities);
+  
+    // for (let i = 0; i < cities.length; i++) {
+  
+    //   let city = cities[i];
+    //   console.log(city);
+    //   if (city.name === CityName) return true;
+    // }
+  
+    // return false;
+  }
