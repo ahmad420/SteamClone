@@ -96,7 +96,7 @@ function editingDetails() {
 }
 function userShow(foo) {
   var users = JSON.parse(localStorage.getItem("users"));
-  var index = 0;
+  var index = -1;
 
   for (var i = 0; i < users.length; i++) {
     if (foo == users[i].email) {
@@ -105,30 +105,29 @@ function userShow(foo) {
     }
   }
 
-  document.getElementById("Name").textContent += users[index].userName;
-  document.getElementById("userFirstName").textContent +=
-    users[index].userFirstName;
-  document.getElementById("userLastName").textContent +=
-    users[index].userLastName;
-  document.getElementById("pw").textContent += users[index].pw;
-  document.getElementById("Name1").textContent += users[index].userName;
-  document.getElementById("Email").textContent += users[index].email;
-  document.getElementById("Email1").textContent += users[index].email;
-  document.getElementById("DateOfBirth").textContent +=
-    users[index].DateOfBirth;
-  document.getElementById("city").textContent += users[index].city;
-  document.getElementById("StreetAddress").textContent +=
-    users[index].StreetAddress;
-  document.getElementById("postBox").textContent += users[index].PostBox;
-  document.getElementById("profileImg").textContent += users[index].file;
+  if (index !== -1) {
+    document.getElementById("Name").textContent = users[index].userName;
+    document.getElementById("userFirstName").textContent = users[index].userFirstName;
+    document.getElementById("userLastName").textContent = users[index].userLastName;
+    document.getElementById("pw").textContent = users[index].pw;
+    document.getElementById("Name1").textContent = users[index].userName;
+    document.getElementById("Email").textContent = users[index].email;
+    document.getElementById("Email1").textContent = users[index].email;
+    document.getElementById("DateOfBirth").textContent = users[index].DateOfBirth;
+    document.getElementById("city").textContent = users[index].city;
+    document.getElementById("StreetAddress").textContent = users[index].StreetAddress;
+    document.getElementById("postBox").textContent = users[index].PostBox;
 
-  var imgSrc = user.file;
+    var imgSrc = users[index].file;
 
-  var img = document.createElement("img");
-  img.src = `user.file`;
-  var src = document.getElementById("profileImg");
-  src.appendChild(img);
+    var img = document.createElement("img");
+    img.src = imgSrc;
+    img.alt = "User Profile Image";
+    var src = document.getElementById("profileImg");
+    src.appendChild(img);
+  }
 }
+
 
 function localStorageClean() {
   sessionStorage.clear();
