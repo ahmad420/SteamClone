@@ -96,7 +96,7 @@ function editingDetails() {
 }
 function userShow(foo) {
   var users = JSON.parse(localStorage.getItem("users"));
-  var index = 0;
+  var index = -1;
 
   for (var i = 0; i < users.length; i++) {
     if (foo == users[i].email) {
@@ -105,30 +105,29 @@ function userShow(foo) {
     }
   }
 
-  document.getElementById("Name").textContent += users[index].userName;
-  document.getElementById("userFirstName").textContent +=
-    users[index].userFirstName;
-  document.getElementById("userLastName").textContent +=
-    users[index].userLastName;
-  document.getElementById("pw").textContent += users[index].pw;
-  document.getElementById("Name1").textContent += users[index].userName;
-  document.getElementById("Email").textContent += users[index].email;
-  document.getElementById("Email1").textContent += users[index].email;
-  document.getElementById("DateOfBirth").textContent +=
-    users[index].DateOfBirth;
-  document.getElementById("city").textContent += users[index].city;
-  document.getElementById("StreetAddress").textContent +=
-    users[index].StreetAddress;
-  document.getElementById("postBox").textContent += users[index].PostBox;
-  document.getElementById("profileImg").textContent += users[index].file;
+  if (index !== -1) {
+    document.getElementById("Name").textContent = users[index].userName;
+    document.getElementById("userFirstName").textContent = users[index].userFirstName;
+    document.getElementById("userLastName").textContent = users[index].userLastName;
+    document.getElementById("pw").textContent = users[index].pw;
+    document.getElementById("Name1").textContent = users[index].userName;
+    document.getElementById("Email").textContent = users[index].email;
+    document.getElementById("Email1").textContent = users[index].email;
+    document.getElementById("DateOfBirth").textContent = users[index].DateOfBirth;
+    document.getElementById("city").textContent = users[index].city;
+    document.getElementById("StreetAddress").textContent = users[index].StreetAddress;
+    document.getElementById("postBox").textContent = users[index].PostBox;
 
-  var imgSrc = user.file;
+    var imgSrc = users[index].file;
 
-  var img = document.createElement("img");
-  img.src = `user.file`;
-  var src = document.getElementById("profileImg");
-  src.appendChild(img);
+    var img = document.createElement("img");
+    img.src = imgSrc;
+    img.alt = "User Profile Image";
+    var src = document.getElementById("profileImg");
+    src.appendChild(img);
+  }
 }
+
 
 function localStorageClean() {
   sessionStorage.clear();
@@ -159,6 +158,31 @@ function saveDetails(foo) {
   var file = 0;
   var pw = document.getElementById("pw").innerHTML;
   var pw2 = document.getElementById("pw").innerHTML;
+
+  if (!validateUserFirstName(userFirstName)){
+    return false;
+  }
+
+  if (!validateUserLastName(userLastName)){
+    return false;
+  }
+ 
+  if (!validateBirthDate(DateOfBirth)) {
+    return false;
+  }
+  ////city name validation 
+  
+   if (!validateStreetAddress(StreetAddress)) {
+     return false;
+   }
+
+  if (!validatePostBox(PostBox)){
+    return false;
+  }
+ 
+  if (!validatePassword(pw)) {
+    return false;
+  }
 
   let newUser = new User(
     userName,
@@ -213,3 +237,99 @@ document.getElementById("getItemBtn").addEventListener("click", function() {
 
 
 
+
+/// valdation functions
+  function validatePassword(pw) {
+    if (pw.trim() === "") {
+      alert("Please enter Password");
+      return false;
+    }
+    if (!/\d/.test(pw)) {
+      alert("Your password needs a number");
+      return false;
+    }
+  
+    if (!/[A-Z]/.test(pw)) {
+      alert("Your password needs an uppercase letter");
+      return false;
+    }
+  
+    if (!/[a-z]/.test(pw)) {
+      alert("Your password needs a lowercase letter");
+      return false;
+    }
+    if (!/[^a-zA-Z0-9]/.test(pw)) {
+      alert("Your password needs a special character");
+      return false;
+    }
+    if (pw.length < 7 || pw.length > 12) {
+      alert("The password length must be between 7-12");
+      return false;
+    }
+    return true;
+  }
+  function validateBirthDate(DateOfBirth) {
+    if (DateOfBirth.trim() === "") {
+      alert("Please enter Birth Date");
+      return false;
+    }
+    return true;
+  }
+  function validateStreetAddress(StreetAddress) {
+  
+  if (StreetAddress.trim() === "") {
+    alert("Please enter Street Address");
+    return false;
+  }
+  if (!cheekHebrewValidation(StreetAddress)) {
+    alert("The street address must be in Hebrew");
+    return false;
+  }
+  
+  return true;
+  
+  }
+  function cheekHebrewValidation(str) {
+    return /[\u0590-\u05FF]/.test(str);
+  }
+  function validatePostBox(PostBox) {
+    if (PostBox.trim() === "") {
+      alert("Please enter Post Box");
+      return false;
+    }
+    if (PostBox<0) {
+      alert("number must be positive");
+      return false;
+    }
+   
+   
+    return true;
+  }
+  function validateUserFirstName(userFirstName) {
+    if (userFirstName.trim() === "") {
+      alert("Please enter First Name");
+      return false;
+    }
+    if (containsNumber(userFirstName)) {
+      alert("User first name  must not contain numbers");
+      return false;
+    }
+    return true;
+  }
+  function containsNumber(str) {
+    return /\d/.test(str);
+  }
+  function validateUserLastName(userLastName) {
+    
+    if (userLastName.trim() === "") {
+      alert("Please enter Last Name");
+      return false;
+    }
+    if (containsNumber(userLastName)) {
+      alert("User last name must not contain numbers");
+      return false;
+    }
+  
+    return true;
+  }
+  

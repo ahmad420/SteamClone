@@ -1,240 +1,250 @@
 body {
-    background-color: #1b2838;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 20px auto;
-
-  }
-  
-  .profile {
-    background-color: #232c3d;
-    border-radius: 5px;
-    padding: 30px;
-    text-align: center;
-    min-width:600px  ;
-    width: 100%;
-  }
-  
-
-  .profile-header {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 150px;
-  }
-  
-  .profile-info {
-    text-align: left;
-    margin-left: 20px;
-  }
-  
-  .profile h1 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .profile h3 {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .profile p {
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  
-  .game-stats {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .stat {
-    flex-basis: 25%;
-    padding: 10px;
-    background-color: #34495e;
-    border-radius: 15px;
-  }
-  
-  .stat h4 {
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  
-  .stat p {
-    color: #fff;
-    font-size: 18px;
-  }
-  
-  .recent-activity {
-    text-align: left;
-  }
-  
-  .recent-activity h2 {
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  
-  .activity-item {
-    margin-bottom: 10px;
-  }
-  
-  .activity-time {
-    color: #00adee;
-    font-size: 14px;
-    margin-right: 5px;
-  }
-  
-  .activity-item p {
-    color: #fff;
-    font-size: 16px;
-    margin: 0;
-  }
-  
-  .activity-item p strong {
-    font-weight: bold;
-  }
-  /* Your existing CSS styles here */
-
-.additional-info {
-    text-align: left;
-    margin-top: 30px;
-  }
-  
-  
-  .info-item {
-    margin-bottom: 10px;
-    color: #fff;
-  }
-  
-  .info-label {
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    margin-right: 5px;
-  }
-  
-  .info-value {
-    color: #fff;
-    font-size: 16px;
-  }
-/* Your existing CSS styles here */
-
-#settings-icon{
-    font-size: 30px;
-    color: #fff;
+  background-color: #1b2838;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-#settings-icon:hover {
-    font-size: 30px;
-    color: #818181;
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
-  
-  /**********************admin page style******************************************/
 
-  
-
-
-
-.card {
-  text-align: left;
-  background-color: #fff;
-  border-radius: 18px;
-  box-shadow: 1px 1px 8px 0 grey;
-  height: auto;
+.profile {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
   margin-bottom: 20px;
-  padding: 20px 0 20px 50px;
-  width: 100%;
 }
 
- .card table {
-  border: none;
-  height: 20px;
-  width: 100%;
-}
-
-
-
-.saveBtn,#editBtn{
-  background-color: #1B2838;
-  border-radius: 50px;
-  border-color: #fff;
-  color: #fff;
-  padding:5px ;
-  min-width: 110px;
-}
-.saveBtn:hover,#editBtn:hover{
-  background-color: #fff;
-  color: #1B2838;
-}
-
-
- .avatar,#profileImg {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-left: -10%;
-}
-
-.img-container{
+.profile-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: first baseline;
-  min-width:200px;
-  min-height:200px;
-
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
-#img-button{
-  width: 200px;
-  padding: 5px;
-} 
+
+
+#profileImg {
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+}
+
+#editIcon {
+  position: relative;
+  top: -100px;
+width: 10px;
+height: 10px;
+cursor: pointer;
+}
+
+#editIcon i {
+  font-size: 15px;
+}
 #imageInput {
-  margin-top: 155px;
-
+display: none;
 }
 
-
-.sign-out-div {
-  text-align: right;
-}
-
-.sign-out-btn,#playGame {
-  width: 110px;
-  padding: 5px;
-  font-size: 16px;
+#img-button{
+  margin-bottom: 20px;
+  margin-left: 5px;
+  background-color: rgb(3, 3, 3);
+  color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 12px;
   cursor: pointer;
-  margin-left: 10px;
-  color: #ffffff;
+  min-width: 50px;
 }
-.sign-out-btn{
-background-color: #ff0000;
-}
-#playGame {
-background-color: #0000ff;
+#img-button:hover{
+  background-color: rgba(3, 3, 3, 0.222);
 
+}
+.profile-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.profile-info {
+  flex-grow: 1;
+  margin-left: 20px;
+  margin-right: 20%;
+
+}
+
+.name {
+  margin: 0;
+}
+
+.FamilyName {
+  margin: 0;
+  font-size: 16px;
+  color: #888;
+}
+
+#settings-icon {
+  padding: 5px ;
+  font-size: 30px;
+  color: rgb(3, 3, 3);
+}
+#settings-icon:hover {
+  color: rgba(3, 3, 3, 0.558);
+}
+
+.sign-out-div {
+  margin-top: 20px;
+}
+
+.sign-out-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 .sign-out-btn:hover {
-  background-color: #cc0000;
+  background-color: #994d4d;
 }
-#playGame:hover {
-  background-color: #0000cc;
+#playGame {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.game-stats {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+
+}
+
+
+.stat {
+  text-align: center;
+  background-color: rgb(22, 101, 198);
+  box-shadow: 0 0 10px rgba(0, 2, 4, 0.9);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  color: #fff;
+  padding: 5px;
   
+}
+
+.stat h4 {
+  margin: 0;
+}
+
+.recent-activity {
+  margin-bottom: 20px;
+}
+
+.recent-activity h2 {
+  margin: 0;
+}
+
+.activity-item {
+  margin-bottom: 10px;
+}
+
+.activity-time {
+  font-size: 12px;
+  color: #888;
+}
+
+.activity-item p {
+  margin: 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card h2 {
+  margin: 0;
+}
+
+#editBtn,
+.saveBtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#editBtn:hover,
+.saveBtn:hover,
+#playGame:hover {
+  background-color: #0000ff;
+}
+table {
+  width: 100%;
+}
+
+td {
+  padding: 2px;
+  border-bottom: 1px solid #ccc;
+}
+
+td:first-child {
+  width: 120px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
+  .img-container {
+    margin-bottom: 20px;
+  }
 
+  .profile-info {
+    margin-left: 0;
+  }
 
+  .settings-icon,
+  .sign-out-div {
+    margin-top: 10px;
+  }
+
+  .game-stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-body {
+    margin-top: 10px;
+  }
+
+  td:first-child {
+    width: 100px;
+  }
+}
 
 

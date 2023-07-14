@@ -44,26 +44,29 @@
     </nav>
     <div class="profile-container">
         <div class="profile">
+            <div class="sign-out-div">
+                <button class="sign-out-btn" onclick="localStorageClean()">Sign Out</button>
+                <button id="playGame" onclick="redirectToPage()">Play Game</button>
+                    <a href="./setings.html"> <i id="settings-icon" class="fa fa-cog"></i></a>
+                </div>
             <div class="profile-header">
-             <div class="img-container">
-                 <div id="profileImg"></div>
-                 <input type="file" id="imageInput">
-                 <button id="img-button" onclick="changeProfileImage()">Change Image</button>
-             </div>
                 <div class="profile-info">
                     <h1 class="name" id="Name1"></h1>
                     <h3 class="FamilyName" id="Email1"></h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget nisi et velit fringilla
                         consequat vel ut urna.</p>
                 </div>
-                <div class="settings-icon">
-                    <a href="./setings.html"> <i id="settings-icon" class="fa fa-cog"></i></a>
-                </div>
-                <div class="sign-out-div">
-                <button class="sign-out-btn" onclick="localStorageClean()">Sign Out</button>
-                <button id="playGame" onclick="redirectToPage()">Play Game</button>
-                </div>
+               
+             <div class="img-container">
+
+                 <div id="profileImg" onclick="showImg()"></div>
+                 <label for="imageInput" id="editIcon"><i class="fas fa-edit"></i></label>
+                 <input type="file" id="imageInput">
+                 <button id="img-button" onclick="changeProfileImage()">Change Image</button>
+             </div>
+               
             </div>
+       
             <div class="game-stats">
                 <div class="stat">
                     <h4>Games Owned</h4>
@@ -92,8 +95,8 @@
             <div class="card">
                      <h2>User info </h2>
                  <div class="card-body">
+                     <button class="saveBtn" onclick="saveDetails()">Save Changes</button>
                 <button id="editBtn" onclick="editingDetails()" >Edit</button>
-            <button class="saveBtn" onclick="saveDetails()">Save Changes</button>
                 <table>
                     <tbody>
                         <tr>

@@ -5,23 +5,26 @@ body {
     padding: 0;
   }
   
-  .profle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 20px auto;
+ 
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  }
-  
-  .profile {
-    background-color: #232c3d;
-    border-radius: 5px;
-    padding: 30px;
-    text-align: center;
-    min-width:600px  ;
-    width: 100%;
-  }
+.profile {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
   
   .avatar {
     width: 100px;
@@ -30,76 +33,69 @@ body {
     margin-bottom: 10px;
   }
   
-  .profile-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
+
   .profile-info {
-    text-align: left;
+    flex-grow: 1;
     margin-left: 20px;
-  }
+    margin-right: 20%;
   
+  }
   .profile h1 {
-    color: #fff;
+    color: #000;
     font-size: 24px;
     margin-bottom: 10px;
   }
   
   .profile h3 {
-    color: #fff;
+    color: #000;
     font-size: 18px;
     margin-bottom: 5px;
   }
   
   .profile p {
-    color: #fff;
     margin-bottom: 20px;
   }
   
   .game-stats {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 20px;
+  
   }
   
+  
   .stat {
-    flex-basis: 30%;
-    padding: 10px;
-    background-color: #34495e;
-    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(22, 101, 198);
+    box-shadow: 0 0 10px rgba(0, 2, 4, 0.9);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 5px;
+    
   }
   
   .stat h4 {
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 5px;
+    margin: 0;
   }
   
   .stat p {
     color: #fff;
     font-size: 18px;
   }
-  #settings-icon{
+  #settings-icon {
+    padding: 5px ;
     font-size: 30px;
-    color: #fff;
-}
-#settings-icon:hover {
-    font-size: 30px;
-    color: #818181;
-}
+    color: rgb(3, 3, 3);
+  }
+  #settings-icon:hover {
+    color: rgba(3, 3, 3, 0.558);
+  }
 
-
-.card {
-    text-align: left;
-    height: auto;
-    padding: 20px 0 20px 50px;
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
   }
   
    .card table {
@@ -109,16 +105,17 @@ body {
   }
 
   .button{
-    background-color: #1B2838;
-    border-radius: 50px;
-    border-color: #fff;
+    background-color: #007bff;
     color: #fff;
-    padding:5px ;
-    min-width: 110px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
   }
   .button:hover{
     background-color: #fff;
-    color: #1B2838;
+    background-color: #0000ff;
   }
   /* End */
   #table {
@@ -138,3 +135,48 @@ body {
  p.card-text{
   color: #1B2838;
  }
+ @media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .img-container {
+    margin-bottom: 20px;
+  }
+
+  .profile-info {
+    margin-left: 0;
+  }
+
+  .settings-icon,
+  .sign-out-div {
+    margin-top: 10px;
+  }
+
+  .game-stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-body {
+    margin-top: 10px;
+  }
+
+  td:first-child {
+    width: 100px;
+  }
+}
+
+
+
+#profileImg {
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+}
+.profile-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
