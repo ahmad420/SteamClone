@@ -151,3 +151,8 @@ function changeProfileImage() {
 function redirectToPage() {
   window.location.href = "../flappyBirdGame/game.html";
 }
+
+function showImg() {
+ 
+}
+
