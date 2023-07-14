@@ -155,6 +155,7 @@ function createUser(
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
   alert("Your account has been created successfully. You can now log in.");
+  window.location.href = "../pages/Login.html";
 }
 /// valdation functions
 function validateFileInput(fileInput) {
