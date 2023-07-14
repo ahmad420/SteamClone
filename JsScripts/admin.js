@@ -160,6 +160,31 @@ function saveDetails(foo) {
   var pw = document.getElementById("pw").innerHTML;
   var pw2 = document.getElementById("pw").innerHTML;
 
+  if (!validateUserFirstName(userFirstName)){
+    return false;
+  }
+
+  if (!validateUserLastName(userLastName)){
+    return false;
+  }
+ 
+  if (!validateBirthDate(DateOfBirth)) {
+    return false;
+  }
+  ////city name validation 
+  
+   if (!validateStreetAddress(StreetAddress)) {
+     return false;
+   }
+
+  if (!validatePostBox(PostBox)){
+    return false;
+  }
+ 
+  if (!validatePassword(pw)) {
+    return false;
+  }
+
   let newUser = new User(
     userName,
     userFirstName,
@@ -213,3 +238,99 @@ document.getElementById("getItemBtn").addEventListener("click", function() {
 
 
 
+
+/// valdation functions
+  function validatePassword(pw) {
+    if (pw.trim() === "") {
+      alert("Please enter Password");
+      return false;
+    }
+    if (!/\d/.test(pw)) {
+      alert("Your password needs a number");
+      return false;
+    }
+  
+    if (!/[A-Z]/.test(pw)) {
+      alert("Your password needs an uppercase letter");
+      return false;
+    }
+  
+    if (!/[a-z]/.test(pw)) {
+      alert("Your password needs a lowercase letter");
+      return false;
+    }
+    if (!/[^a-zA-Z0-9]/.test(pw)) {
+      alert("Your password needs a special character");
+      return false;
+    }
+    if (pw.length < 7 || pw.length > 12) {
+      alert("The password length must be between 7-12");
+      return false;
+    }
+    return true;
+  }
+  function validateBirthDate(DateOfBirth) {
+    if (DateOfBirth.trim() === "") {
+      alert("Please enter Birth Date");
+      return false;
+    }
+    return true;
+  }
+  function validateStreetAddress(StreetAddress) {
+  
+  if (StreetAddress.trim() === "") {
+    alert("Please enter Street Address");
+    return false;
+  }
+  if (!cheekHebrewValidation(StreetAddress)) {
+    alert("The street address must be in Hebrew");
+    return false;
+  }
+  
+  return true;
+  
+  }
+  function cheekHebrewValidation(str) {
+    return /[\u0590-\u05FF]/.test(str);
+  }
+  function validatePostBox(PostBox) {
+    if (PostBox.trim() === "") {
+      alert("Please enter Post Box");
+      return false;
+    }
+    if (PostBox<0) {
+      alert("number must be positive");
+      return false;
+    }
+   
+   
+    return true;
+  }
+  function validateUserFirstName(userFirstName) {
+    if (userFirstName.trim() === "") {
+      alert("Please enter First Name");
+      return false;
+    }
+    if (containsNumber(userFirstName)) {
+      alert("User first name  must not contain numbers");
+      return false;
+    }
+    return true;
+  }
+  function containsNumber(str) {
+    return /\d/.test(str);
+  }
+  function validateUserLastName(userLastName) {
+    
+    if (userLastName.trim() === "") {
+      alert("Please enter Last Name");
+      return false;
+    }
+    if (containsNumber(userLastName)) {
+      alert("User last name must not contain numbers");
+      return false;
+    }
+  
+    return true;
+  }
+  
