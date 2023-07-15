@@ -21,34 +21,42 @@ describe('Add new product', function() {
 
   
 
-  //הוספת מוצר לעגלה:
+// הוספת מוצר לעגלה:
 describe('Add product to cart', function() {
   it('should add a product to the shopping cart', function() {
     // Arrange
-    var cart = []; // Define an empty cart
-    var obj = {}; // Create an object to hold the functions
-
+    var itemToAdd = { id: "1", name: 'Product 1', price: 10, category: "Category 1", image: "../images/product.jpg" }; // Product to add to the cart
+    let cartItems;
     // Act
-    obj.addItemToCart = function(name, price, count) {
-      for(var item in cart) {
-        if(cart[item].name === name) {
-          cart[item].count ++;
-          return;
-        }
-      }
-      var item = { name: name, price: price, count: count };
-      cart.push(item);
-    };
+    function addToCart(item) {
+       cartItems = localStorage.getItem("items");
 
-    obj.addItemToCart('Product 1', 10, 1); // Add a product to the cart
+      if (cartItems) {
+        cartItems = JSON.parse(cartItems);
+      } else {
+        cartItems = [];
+      }
+
+      const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
+
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        item.quantity = 1;
+        cartItems.push(item);
+      }
+
+      localStorage.setItem("items", JSON.stringify(cartItems));
+    }
+
+    addToCart(itemToAdd); // Add a product to the cart
 
     // Assert
-    expect(cart.length).toBe(1); // Check that the product was added to the cart
-    expect(cart[0].name).toBe('Product 1'); // Check that the product name is correct
+    var updatedCartItems = JSON.parse(localStorage.getItem('items'));
+    expect(updatedCartItems.length).toBe(cartItems.length); // Check that the product was added to the cart
   });
 });
 
-  
 
   //הסרת מוצר מהעגלה:
   describe('Remove product from cart', function() {
