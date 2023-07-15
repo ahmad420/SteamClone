@@ -58,35 +58,39 @@ describe('Add product to cart', function() {
 });
 
 
-  //הסרת מוצר מהעגלה:
+  //הורדת מוצר מהעגלה:
   describe('Remove product from cart', function() {
     it('should remove a product from the shopping cart', function() {
       // Arrange
-      var cart = []; // Define an empty cart
-      var obj = {}; // Create an object to hold the functions
-  
+      var itemToRemove = { id: "1", name: 'Product 1', price: 10, category: "Category 1", image: "../images/product.jpg" }; // Product to remove from the cart
+      let cartItems;
       // Act
-      obj.removeItemFromCart = function(name) {
-        for(var item in cart) {
-          if(cart[item].name === name) {
-            cart[item].count--;
-            if(cart[item].count === 0) {
-              cart.splice(item, 1);
-            }
-            break;
-          }
-        }
-      };
+      function removeFromCart(item) {
+        cartItems = localStorage.getItem("items");
   
-      // Add a product to the cart
-      cart.push({ name: 'Product 1', price: 10, count: 1 });
-      
-      obj.removeItemFromCart('Product 1'); // Remove the product from the cart
+        if (cartItems) {
+          cartItems = JSON.parse(cartItems);
+        } else {
+          cartItems = [];
+        }
+  
+        const existingItemIndex = cartItems.findIndex((cartItem) => cartItem.id === item.id);
+  
+        if (existingItemIndex !== -1) {
+          cartItems.splice(existingItemIndex, 1);
+        }
+  
+        localStorage.setItem("items", JSON.stringify(cartItems));
+      }
+  
+      removeFromCart(itemToRemove); // Remove a product from the cart
   
       // Assert
-      expect(cart.length).toBe(0); // Check that the product was removed from the cart
+      var updatedCartItems = JSON.parse(localStorage.getItem('items'));
+      expect(updatedCartItems.length).toBe(cartItems.length); // Check that the product was removed from the cart
     });
   });
+  
   
 
   //תהליך רכישה כללי:
