@@ -2,22 +2,23 @@
 describe('Add new product', function() {
   it('should add a new product to the product repository', function() {
     // Arrange
-    var itemsData = []; // Define an empty itemsData array
-    var newItem = { name: 'New Product', price: 10 }; // Define a new product
-    
+    var itemsData = JSON.parse(localStorage.getItem('itemsData')) || [];
+    var storedItemsData = JSON.parse(JSON.stringify(itemsData)); // Create a copy of the stored itemsData
+    var newItem = { id: itemsData.length + 1,name: 'New Product', price: 10, category:"Category 1",image:"../images/product.jpg"}; // Define a new product
+ 
     // Act
-    // Add the new item to the itemsData array
-    itemsData.push(newItem);
-    // Save the updated itemsData in local storage (mock implementation)
-    localStorage.setItem('itemsData', JSON.stringify(itemsData));
-    // Perform any necessary additional operations based on your code implementation
+    // Add the new item to the storedItemsData array
+    storedItemsData.push(newItem);
+
+    // Update the itemsData in local storage
+    localStorage.setItem('itemsData', JSON.stringify(storedItemsData));
 
     // Assert
-    // Check the expected result, for example:
-    // Expect the length of itemsData to be 1 after adding the new product
-    expect(itemsData.length).toBe(1);
+    // Check if the length of storedItemsData has increased after adding the new product
+    expect(storedItemsData.length).toBe(itemsData.length + 1);
   });
 });
+
   
 
   //הוספת מוצר לעגלה:
