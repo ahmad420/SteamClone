@@ -2,13 +2,6 @@ var users = JSON.parse(localStorage.getItem("users"));
 let btnGet = document.querySelector(".buttonTable");
 let myTable = document.querySelector("#table");
 
-
-// Call the authentication check function on page load
-window.onload = function () {
-  checkAuthentication1();
-};
-
-
 // Call the authentication check function on page load, when the page is shown, and when the URL changes
 window.onload =
   window.onpageshow =
@@ -339,12 +332,10 @@ function logout() {
 }
 
 function checkAuthentication() {
-  let isAuthenticated = sessionStorage.getItem("isAuthenticated");
+  let isAuthenticated = sessionStorage.getItem("isAdminLoggedIn");
 
   // If user is not authenticated, redirect to login page
   if (!isAuthenticated) {
     window.location.href = "login.html";
   }
 }
-
-
