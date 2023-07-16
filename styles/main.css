@@ -76,7 +76,16 @@
     color: #c7c7c7;
     margin:50px 0;
   }
+  h3 ,h4,h5{
+    margin: 30px;
+    color: #fff;
+
+  }
   
+   img {
+    max-height: 300px;
+    max-width: 600px;
+  }
   @media (max-width: 767px) {
     .games-list {
       flex-wrap: wrap;

@@ -1,0 +1,72 @@
+   body {
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            margin: 100px;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        #gameContainer {
+            position: relative;
+            width: 600px;
+            height: 500px;
+            overflow: hidden;
+            border: 8px solid #4d4d4d;
+            border-radius: 5px;
+            background-color: #000;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.05) inset;
+        }
+
+        #gameCanvas {
+            display: block;
+            image-rendering: pixelated;
+            width: 60vw;
+            height: 100%;
+        }
+
+        #highScores {
+            margin-top: 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        #highScores h2 {
+            margin: 0;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        #scoreList {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        #scoreList li {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        #restartButton {
+            display: none;
+            margin: 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            padding: 5px 10px;
+            background-color: #4d4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            #gameContainer {
+                border-width: 4px;
+            }
+        }

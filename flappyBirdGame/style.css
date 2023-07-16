@@ -108,3 +108,22 @@ body{
     padding: 10px;
     background-color: rgb(0, 0, 0,0.5);
   }
+
+  #scoreTimeDisplay, #highestScoreDisplay {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  #scoreTimeDisplay {
+    width: 200px;
+  }
+  
+  #highestScoreDisplay {
+    width: 180px;
+  }
+  
