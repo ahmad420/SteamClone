@@ -379,27 +379,32 @@ function validateUserLastName(userLastName) {
 async function getCites() {
   let dropdown = document.getElementById("locality-dropdown");
   dropdown.length = 0;
-
+  
+  dropdown.dir = "rtl"; // הוספת כיוון ימין לשמאל לתצוגת התווים בשדה הקלט
+  
   let defaultOption = document.createElement("option");
-  defaultOption.text = "Choose State/Province";
-
+  defaultOption.text = "בחר עיר";
+  
   dropdown.add(defaultOption);
   dropdown.selectedIndex = 0;
-
+  
   const url = "../data/cities.json";
-
+  
   try {
     const response = await fetch(url);
-
+  
     if (response.status !== 200) {
-      alert("Looks like there was a problem. Status Code: " + response.status);
+      alert("נתקלנו בבעיה. קוד הסטטוס: " + response.status);
       return;
     }
-
+  
     const data = await response.json();
-
+  
+    // שמירת רשימת הערים/יישובים במערך
+    window.cities = data;
+  
     let option;
-
+  
     for (let i = 0; i < data.length; i++) {
       option = document.createElement("option");
       option.text = data[i].name;
@@ -407,6 +412,23 @@ async function getCites() {
       dropdown.add(option);
     }
   } catch (err) {
-    alert("Fetch Error -", err);
+    alert("שגיאה בשליפת המידע -", err);
   }
 }
+
+function filterCities() {
+  const input = document.getElementById("locality-dropdown").value;
+  const cities = window.cities;
+
+  for (let i = 0; i < cities.length; i++) {
+    const cityName = cities[i].name;
+    const option = document.querySelector(`option[value="${cities[i].abbreviation}"]`);
+
+    if (cityName.includes(input)) {
+      option.style.display = "";
+    } else {
+      option.style.display = "none";
+    }
+  }
+}
+
