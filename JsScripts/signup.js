@@ -51,6 +51,7 @@ function store(event) {
   const pw = document.getElementById("pw").value;
   const pw2 = document.getElementById("pw2").value;
 
+  console.log(CityName);
   if (!validateUserName(userName)) {
     return false;
   }
@@ -379,36 +380,36 @@ function validateUserLastName(userLastName) {
 async function getCites() {
   let dropdown = document.getElementById("locality-dropdown");
   dropdown.length = 0;
-  
+
   dropdown.dir = "rtl"; // הוספת כיוון ימין לשמאל לתצוגת התווים בשדה הקלט
-  
+
   let defaultOption = document.createElement("option");
   defaultOption.text = "בחר עיר";
-  
+
   dropdown.add(defaultOption);
   dropdown.selectedIndex = 0;
-  
+
   const url = "../data/cities.json";
-  
+
   try {
     const response = await fetch(url);
-  
+
     if (response.status !== 200) {
       alert("נתקלנו בבעיה. קוד הסטטוס: " + response.status);
       return;
     }
-  
+
     const data = await response.json();
-  
+
     // שמירת רשימת הערים/יישובים במערך
     window.cities = data;
-  
+
     let option;
-  
+
     for (let i = 0; i < data.length; i++) {
       option = document.createElement("option");
       option.text = data[i].name;
-      option.value = data[i].abbreviation;
+      option.value = data[i].name;
       dropdown.add(option);
     }
   } catch (err) {
@@ -422,7 +423,9 @@ function filterCities() {
 
   for (let i = 0; i < cities.length; i++) {
     const cityName = cities[i].name;
-    const option = document.querySelector(`option[value="${cities[i].abbreviation}"]`);
+    const option = document.querySelector(
+      `option[value="${cities[i].abbreviation}"]`
+    );
 
     if (cityName.includes(input)) {
       option.style.display = "";
@@ -431,4 +434,3 @@ function filterCities() {
     }
   }
 }
-
