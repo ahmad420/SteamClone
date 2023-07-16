@@ -155,7 +155,7 @@ function saveDetails(foo) {
   var StreetAddress = document.getElementById("StreetAddress").innerHTML;
   var PostBox = document.getElementById("postBox").innerHTML;
   var email = document.getElementById("Email").innerHTML;
-  var file = 0;
+  var file = users[index].file;
   var pw = document.getElementById("pw").innerHTML;
   var pw2 = document.getElementById("pw").innerHTML;
 
