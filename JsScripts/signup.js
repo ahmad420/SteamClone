@@ -34,6 +34,81 @@ class User {
     return this.DateOfBirth.toString();
   }
 }
+
+// Adding five users to localStorage
+var user1 = new User(
+  "user1",
+  "John",
+  "Doe",
+  "2000-01-01",
+  "אבטליון",
+  "Address1",
+  "12345",
+  "user1@example.com",
+  "file1.jpg",
+  "password1",
+  "password1"
+);
+var user2 = new User(
+  "user2",
+  "Jane",
+  "Smith",
+  "1995-05-10",
+  "אבו גוש",
+  "Address2",
+  "23456",
+  "user2@example.com",
+  "file2.jpg",
+  "password2",
+  "password2"
+);
+var user3 = new User(
+  "user3",
+  "Michael",
+  "Johnson",
+  "1988-12-20",
+  "אבו גוש",
+  "Address3",
+  "34567",
+  "user3@example.com",
+  "file3.jpg",
+  "password3",
+  "password3"
+);
+var user4 = new User(
+  "user4",
+  "Emily",
+  "Davis",
+  "1992-07-15",
+  "אביאל",
+  "Address4",
+  "45678",
+  "user4@example.com",
+  "file4.jpg",
+  "password4",
+  "password4"
+);
+var user5 = new User(
+  "user5",
+  "David",
+  "Wilson",
+  "1998-03-25",
+  "אביאל",
+  "Address5",
+  "56789",
+  "user5@example.com",
+  "file5.jpg",
+  "password5",
+  "password5"
+);
+
+if (users.length === 0 || users === null) {
+  addUserToLocalStorage(user1);
+  addUserToLocalStorage(user2);
+  addUserToLocalStorage(user3);
+  addUserToLocalStorage(user4);
+  addUserToLocalStorage(user5);
+}
 getCites();
 
 function store(event) {
@@ -433,4 +508,10 @@ function filterCities() {
       option.style.display = "none";
     }
   }
+}
+
+function addUserToLocalStorage(user) {
+  var users = JSON.parse(localStorage.getItem("users")) || [];
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
 }

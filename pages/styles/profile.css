@@ -1,5 +1,4 @@
 body {
-  background-color: #1b2838;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -12,10 +11,11 @@ body {
 }
 
 .profile {
-  background-color: #f2f2f2;
+  background-color: #1c1f26;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .profile-header {
@@ -25,83 +25,80 @@ body {
   margin-bottom: 20px;
 }
 
-
 #profileImg {
   width: 8em;
   height: 8em;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+#profileImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #editIcon {
   position: relative;
   top: -100px;
-width: 10px;
-height: 10px;
-cursor: pointer;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
-#editIcon i {
-  font-size: 15px;
+#editIcon:hover {
+  color: #67c1f5;
 }
+
 #imageInput {
-display: none;
+  display: none;
 }
 
-#img-button{
+#img-button {
   margin-bottom: 20px;
   margin-left: 5px;
-  background-color: rgb(3, 3, 3);
+  background-color: #000;
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 12px;
+  padding: 5px 10px;
+  font-size: 14px;
   cursor: pointer;
-  min-width: 50px;
-}
-#img-button:hover{
-  background-color: rgba(3, 3, 3, 0.222);
-
-}
-.profile-container img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
 }
 
-.input-file {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
+#img-button:hover {
+  background-color: #222;
 }
 
 .profile-info {
   flex-grow: 1;
   margin-left: 20px;
   margin-right: 20%;
-
+  color: #fff;
 }
 
 .name {
   margin: 0;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .FamilyName {
   margin: 0;
   font-size: 16px;
-  color: #888;
+  color: #999;
 }
 
 #settings-icon {
-  padding: 5px ;
-  font-size: 30px;
-  color: rgb(3, 3, 3);
+  font-size: 24px;
+  color: #67c1f5;
+  transition: color 0.3s ease;
 }
+
 #settings-icon:hover {
-  color: rgba(3, 3, 3, 0.558);
+  color: #4fa2d9;
 }
 
 .sign-out-div {
@@ -109,57 +106,64 @@ display: none;
 }
 
 .sign-out-btn {
-  background-color: #ff4d4d;
+  background-color: #c53e3e;
   color: #fff;
   border: none;
   padding: 5px 20px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-}
-.sign-out-btn:hover {
-  background-color: #994d4d;
-}
-#playGame {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 5px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.sign-out-btn:hover {
+  background-color: #a03333;
+}
+
+#playGame {
+  background-color: #67c1f5;
+  color: #fff;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#playGame:hover {
+  background-color: #4fa2d9;
+}
 
 .game-stats {
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 20px;
-
 }
-
 
 .stat {
   text-align: center;
-  background-color: rgb(22, 101, 198);
-  box-shadow: 0 0 10px rgba(0, 2, 4, 0.9);
-  transition: all 0.3s ease;
-  box-sizing: border-box;
+  background-color: #1c1f26;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
   color: #fff;
-  padding: 5px;
-  
 }
 
 .stat h4 {
   margin: 0;
+  font-size: 14px;
 }
 
 .recent-activity {
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .recent-activity h2 {
   margin: 0;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .activity-item {
@@ -168,45 +172,53 @@ display: none;
 
 .activity-time {
   font-size: 12px;
-  color: #888;
+  color: #999;
 }
 
 .activity-item p {
   margin: 0;
+  font-size: 14px;
 }
 
 .card {
-  background-color: #fff;
+  background-color: #1c1f26;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .card h2 {
   margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 #editBtn,
 .saveBtn {
-  background-color: #007bff;
+  background-color: #67c1f5;
   color: #fff;
   border: none;
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 #editBtn:hover,
-.saveBtn:hover,
-#playGame:hover {
-  background-color: #0000ff;
+.saveBtn:hover {
+  background-color: #4fa2d9;
 }
+
 table {
   width: 100%;
+  color: #fff;
 }
 
 td {
-  padding: 2px;
-  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  border-bottom: 1px solid #444;
 }
 
 td:first-child {
@@ -246,5 +258,3 @@ td:first-child {
     width: 100px;
   }
 }
-
-
