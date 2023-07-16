@@ -45,7 +45,7 @@ var user1 = new User(
   "Address1",
   "12345",
   "user1@example.com",
-  "file1.jpg",
+  "C:UsersahmadDesktopSteamCloneimagesminicraft.jpg",
   "password1",
   "password1"
 );

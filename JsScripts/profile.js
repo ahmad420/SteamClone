@@ -67,8 +67,6 @@ function displayUser(users, index) {
   document.getElementById("city").textContent += user.CityName;
   document.getElementById("StreetAddress").textContent += user.StreetAddress;
   document.getElementById("postBox").textContent += user.PostBox;
-
- 
 }
 function displayEditedUser(users, index) {
   var user = users[index];
@@ -125,6 +123,7 @@ function saveDetails() {
 function changeProfileImage() {
   var imageInput = document.getElementById("imageInput");
   var profileImg = document.getElementById("profileImg");
+  var index = 0; // Replace with the appropriate index value
 
   // Check if a file is selected
   if (imageInput.files && imageInput.files[0]) {
@@ -139,11 +138,17 @@ function changeProfileImage() {
       // Clear the previous content and append the new image
       profileImg.innerHTML = "";
       profileImg.appendChild(img);
-      user = users1[index];
+
+      // Save the new image path to the user's file property
+      var users = JSON.parse(localStorage.getItem("users"));
+      users[index].file = e.target.result;
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Image changed successfully.");
     };
+
     // Read the selected file as a data URL
     reader.readAsDataURL(imageInput.files[0]);
-    alert(`"Image changed successfully."`);
   }
 }
 
