@@ -88,6 +88,11 @@ function displayEditedUser(users, index) {
   document.getElementById("city").textContent = user.CityName;
   document.getElementById("StreetAddress").textContent = user.StreetAddress;
   document.getElementById("postBox").textContent = user.PostBox;
+  var imgSrc = user.file;
+  var img = document.createElement("img");
+  img.src = imgSrc;
+  var profileImg = document.getElementById("profileImg");
+  profileImg.appendChild(img);
 }
 function saveDetails() {
   var userName = document.getElementById("Name").innerHTML;
