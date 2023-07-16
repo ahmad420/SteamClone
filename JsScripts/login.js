@@ -37,6 +37,10 @@ function check(event) {
         return;
       }
     }
+    else {
+      alert("Your User Name is Wrong");
+      return;
+    }
   }
   //////If the user name is wrong
   if (!isLoggedIn) {
