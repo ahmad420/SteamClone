@@ -11,7 +11,7 @@ for (var i = 0; i < users1.length; i++) {
 
 if (flag) {
   displayUser(users1, index);
-  flag = flase;
+  flag = false;
 }
 class User {
   constructor(
@@ -101,7 +101,7 @@ function saveDetails() {
   var email = document.getElementById("Email").innerHTML;
   var file = users1[index].file;
   var pw = document.getElementById("pw").innerHTML;
-  var pw2 = document.getElementById("pw2").innerHTML;
+  var pw2 = document.getElementById("pw").innerHTML;
   let newUser = new User(
     userName,
     userFirstName,
