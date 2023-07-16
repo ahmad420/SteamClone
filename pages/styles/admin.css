@@ -160,6 +160,7 @@ table td {
   .profile-header {
     flex-direction: column;
     align-items: flex-start;
+
   }
 
   .avatar {
@@ -176,4 +177,12 @@ table td {
     flex-direction: column;
     align-items: flex-start;
   }
+
+}
+#logout {
+  width: 8%;
+  display: flex;
+  margin-left: 2%;
+  justify-content: center;
+  min-width: 100px;
 }
