@@ -258,8 +258,9 @@ function emptyCart() {
 function checkout() {
   const total = calculateTotal();
 
+  if (total === 0) alert("cart is empty");
   // Redirect to the payment page with the total price as a query parameter
-  window.location.href = "payment.html?total=" + total;
+  else window.location.href = "payment.html?total=" + total;
 }
 
 // Calculate the total price of items in the cart

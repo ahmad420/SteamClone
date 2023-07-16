@@ -1,8 +1,20 @@
 var user = JSON.parse(sessionStorage.getItem("user"));
 var users1 = JSON.parse(localStorage.getItem("users"));
+let isAuthenticated =
+  sessionStorage.getItem("isLoggedIn") ||
+  sessionStorage.setItem("isLoggedIn", false);
+
+// Call the authentication check function on page load, when the page is shown, and when the URL changes
+window.onload =
+  window.onpageshow =
+  window.onpopstate =
+    function () {
+      checkAuthenticationUser();
+    };
 
 var index = 0;
 let flag = true;
+
 for (var i = 0; i < users1.length; i++) {
   if (user.email == users1[i].email) {
     index = i;
@@ -157,3 +169,13 @@ function redirectToPage() {
 }
 
 function showImg() {}
+
+function checkAuthenticationUser() {
+  let isAuthenticateduser = sessionStorage.getItem("isLoggedIn");
+  let usermail = sessionStorage.getItem("user");
+
+  // If user is not authenticated, redirect to login page
+  if (!isAuthenticateduser || usermail == null) {
+    window.location.href = "./login.html";
+  }
+}

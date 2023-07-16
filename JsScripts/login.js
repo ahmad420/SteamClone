@@ -1,3 +1,5 @@
+const admins = JSON.parse(localStorage.getItem("admins")) || [];
+
 function check(event) {
   event.preventDefault(); // Prevent the default form submission
   var LoginUserName = document.getElementById("LoginUserName").value;
@@ -5,6 +7,7 @@ function check(event) {
 
   if (LoginUserName == "admin" && LoginPassoword == "admin1234admin") {
     alert(" You are logged in. Admin Page");
+    sessionStorage.setItem("isAdminLoggedIn", true);
     location.replace("../pages/admin.html");
     return;
   }
@@ -20,19 +23,18 @@ function check(event) {
   }
   ///////////////////////////////////////////////
 
-  var isLoggedIn  = false;
+  var isLoggedIn = false;
   /// cheking if user name and passoword is correct
   for (var i = 0; i < arrayOfUserNames.length; i++) {
     if (LoginUserName == arrayOfUserNames[i]) {
       if (LoginPassoword == arrayOfPw[i]) {
-        isLoggedIn  = true;
+        isLoggedIn = true;
         alert("You are logged in.");
-        sessionStorage.setItem("isLoggedIn", true); 
+        sessionStorage.setItem("isLoggedIn", true);
         sessionStorage.setItem(`user`, JSON.stringify(arr[i]));
         location.replace("../pages/profile.html");
         return;
-      } 
-      else {
+      } else {
         alert("Your Password is Wrong");
         return;
       }
