@@ -1,5 +1,6 @@
 var user = JSON.parse(sessionStorage.getItem("user"));
 var users1 = JSON.parse(localStorage.getItem("users"));
+
 var index = 0;
 let flag = true;
 for (var i = 0; i < users1.length; i++) {
@@ -10,7 +11,7 @@ for (var i = 0; i < users1.length; i++) {
 }
 
 if (flag) {
-  displayUser(users1, index);
+  displayEditedUser(users1, index);
   flag = false;
 }
 class User {
@@ -76,19 +77,17 @@ function displayUser(users, index) {
 function displayEditedUser(users, index) {
   var user = users[index];
 
-  document.getElementById("Name").textContent += user.userName;
-  document.getElementById("userFirstName").textContent += user.userFirstName;
-  document.getElementById("userLastName").textContent += user.userLastName;
-  document.getElementById("pw").textContent += user.pw;
-  document.getElementById("Name1").textContent += user.userName;
-  document.getElementById("Email").textContent += user.email;
-  document.getElementById("Email1").textContent += user.email;
-  document.getElementById("DateOfBirth").textContent += user.DateOfBirth;
-  document.getElementById("city").textContent += user.CityName;
-  document.getElementById("StreetAddress").textContent += user.StreetAddress;
-  document.getElementById("postBox").textContent += user.PostBox;
-
- 
+  document.getElementById("Name").textContent = user.userName;
+  document.getElementById("userFirstName").textContent = user.userFirstName;
+  document.getElementById("userLastName").textContent = user.userLastName;
+  document.getElementById("pw").textContent = user.pw;
+  document.getElementById("Name1").textContent = user.userName;
+  document.getElementById("Email").textContent = user.email;
+  document.getElementById("Email1").textContent = user.email;
+  document.getElementById("DateOfBirth").textContent = user.DateOfBirth;
+  document.getElementById("city").textContent = user.CityName;
+  document.getElementById("StreetAddress").textContent = user.StreetAddress;
+  document.getElementById("postBox").textContent = user.PostBox;
 }
 function saveDetails() {
   var userName = document.getElementById("Name").innerHTML;
@@ -130,7 +129,7 @@ function changeProfileImage() {
   if (imageInput.files && imageInput.files[0]) {
     var reader = new FileReader();
 
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       // Create an <img> element and set the image source
       var img = document.createElement("img");
       img.src = e.target.result;
@@ -147,12 +146,8 @@ function changeProfileImage() {
   }
 }
 
-
 function redirectToPage() {
   window.location.href = "../flappyBirdGame/game.html";
 }
 
-function showImg() {
- 
-}
-
+function showImg() {}
