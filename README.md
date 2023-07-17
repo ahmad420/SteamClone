@@ -13,7 +13,7 @@ This is a repository for the Steam Clone project, a web application designed to 
 
 ## Online Website
 
-Click [here]([https://ahmad420.github.io/SteamClone/]) to view the online website.
+Click [here](https://ahmad420.github.io/SteamClone/) to view the online website.
 
 ## Technologies Used
 
