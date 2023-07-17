@@ -1,6 +1,6 @@
 # Steam Clone Project
 
-![Steam Clone](steam_clone.png)
+![Steam Clone](./images/steam.png)
 
 This is a repository for the Steam Clone project, a web application designed to emulate the functionality and features of the popular gaming platform, Steam. The project aims to provide users with a familiar and immersive gaming experience while offering various services such as game browsing, user authentication, and social interactions.
 
