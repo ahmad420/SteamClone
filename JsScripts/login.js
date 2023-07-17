@@ -1,52 +1,61 @@
 const admins = JSON.parse(localStorage.getItem("admins")) || [];
 
+let userIsLoggedIn;
+let adminIsLoggedIn;
+
+function updateLoginStatus() {
+  userIsLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+  adminIsLoggedIn = sessionStorage.getItem("isAdminLoggedIn") === "true";
+}
+
+window.addEventListener("load", updateLoginStatus);
+window.addEventListener("pageshow", updateLoginStatus);
+window.addEventListener("popstate", updateLoginStatus);
+
 function check(event) {
   event.preventDefault(); // Prevent the default form submission
-  var LoginUserName = document.getElementById("LoginUserName").value;
-  var LoginPassoword = document.getElementById("LoginPassoword").value;
 
-  if (LoginUserName == "admin" && LoginPassoword == "admin1234admin") {
-    alert(" You are logged in. Admin Page");
-    sessionStorage.setItem("isAdminLoggedIn", true);
+  var loginUserName = document.getElementById("LoginUserName").value;
+  var loginPassword = document.getElementById("LoginPassoword").value;
+
+  if (userIsLoggedIn) {
+    alert("User: Please log out before logging in with another account.");
+    return;
+  }
+
+  if (adminIsLoggedIn) {
+    alert("Admin: Please log out before logging in with another account.");
+    return;
+  }
+
+  if (loginUserName === "admin" && loginPassword === "admin1234admin") {
+    alert("You are logged in as an admin.");
+    sessionStorage.setItem("isAdminLoggedIn", "true");
     location.replace("../pages/admin.html");
     return;
   }
-  const arr = JSON.parse(localStorage.getItem("users"));
 
-  var arrayOfUserNames = new Array();
-  var arrayOfPw = new Array();
-
-  ///saving all passowrds and user names in arrays
-  for (var i = 0; i < arr.length; i++) {
-    arrayOfUserNames[i] = arr[i].userName;
-    arrayOfPw[i] = arr[i].pw;
-  }
-  ///////////////////////////////////////////////
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
   var isLoggedIn = false;
-  /// cheking if user name and passoword is correct
-  for (var i = 0; i < arrayOfUserNames.length; i++) {
-    if (LoginUserName == arrayOfUserNames[i]) {
-      if (LoginPassoword == arrayOfPw[i]) {
+
+  for (var i = 0; i < users.length; i++) {
+    if (loginUserName === users[i].userName) {
+      if (loginPassword === users[i].pw) {
         isLoggedIn = true;
         alert("You are logged in.");
-        sessionStorage.setItem("isLoggedIn", true);
-        sessionStorage.setItem(`user`, JSON.stringify(arr[i]));
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("user", JSON.stringify(users[i]));
         location.replace("../pages/profile.html");
         return;
       } else {
-        alert("Your Password is Wrong");
+        alert("Your password is incorrect.");
         return;
       }
     }
-    else {
-      alert("Your User Name is Wrong");
-      return;
-    }
   }
-  //////If the user name is wrong
+
   if (!isLoggedIn) {
-    alert("Your User Name  is Wrong");
-    return;
+    alert("Your username is incorrect.");
   }
 }

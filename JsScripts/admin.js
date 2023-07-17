@@ -333,7 +333,7 @@ function logout() {
 
 function checkAuthentication() {
   let isAuthenticated = sessionStorage.getItem("isAdminLoggedIn");
-
+ 
   // If user is not authenticated, redirect to login page
   if (!isAuthenticated) {
     window.location.href = "login.html";
