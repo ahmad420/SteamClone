@@ -6,6 +6,14 @@ if (itemsData) {
   itemsData = [];
 }
 
+// Call the authentication check function on page load, when the page is shown, and when the URL changes
+window.onload =
+  window.onpageshow =
+  window.onpopstate =
+    function () {
+      checkAuthenticationadmin();
+    };
+
 // Get the form element
 const addItemForm = document.getElementById("add-item-form");
 
@@ -37,3 +45,11 @@ addItemForm.addEventListener("submit", function (event) {
   // Reset the form inputs
   addItemForm.reset();
 });
+
+function checkAuthenticationadmin() {
+  let isAuthenticatedadmin = sessionStorage.getItem("isAdminLoggedIn");
+  // If user is not authenticated, redirect to login page
+  if (!isAuthenticatedadmin || isAuthenticatedadmin !== "true") {
+    window.location.href = "login.html";
+  }
+}
