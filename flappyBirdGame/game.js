@@ -116,7 +116,9 @@ const pipes = [];
 let frames = 0;
 let gameOver = false;
 let gameStarted = false;
-// Main game loop
+
+
+//********************** */ Main game loop*************************************
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
@@ -148,6 +150,9 @@ function gameLoop() {
   frames++;
   requestAnimationFrame(gameLoop);
 }
+
+//********************** */
+
 const startButton = document.getElementById("startButton");
 const resetButton = document.getElementById("resetButton");
 const gameOverMessage = document.getElementById("gameOver");

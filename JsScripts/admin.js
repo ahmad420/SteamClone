@@ -81,9 +81,9 @@ class User {
   }
 }
 
-let foo;
-
 //////////////////////////////////////////////////
+
+let foo;
 function editingUsers() {
   foo = prompt("Enter here The Mail For the user you want to edit: ");
   userShow(foo);
@@ -308,21 +308,6 @@ function validateCityNameFromList(CityName) {
   }
 
   return true;
-
-  // console.log(CityName);
-
-  // let cities = await getCities(); // Await the getCities() function to resolve the promise
-
-  // console.log(cities);
-
-  // for (let i = 0; i < cities.length; i++) {
-
-  //   let city = cities[i];
-  //   console.log(city);
-  //   if (city.name === CityName) return true;
-  // }
-
-  // return false;
 }
 
 function logout() {
@@ -333,7 +318,7 @@ function logout() {
 
 function checkAuthentication() {
   let isAuthenticated = sessionStorage.getItem("isAdminLoggedIn");
- 
+
   // If user is not authenticated, redirect to login page
   if (!isAuthenticated) {
     window.location.href = "login.html";

@@ -45,7 +45,7 @@ var user1 = new User(
   "Address1",
   "12345",
   "user1@example.com",
-  "C:UsersahmadDesktopSteamCloneimagesminicraft.jpg",
+  "https://www.nicepng.com/png/detail/72-729987_big-image-user-clipart-png.png",
   "password1",
   "password1"
 );
@@ -58,7 +58,7 @@ var user2 = new User(
   "Address2",
   "23456",
   "user2@example.com",
-  "file2.jpg",
+  "https://www.nicepng.com/png/detail/72-729987_big-image-user-clipart-png.png",
   "password2",
   "password2"
 );
@@ -71,7 +71,7 @@ var user3 = new User(
   "Address3",
   "34567",
   "user3@example.com",
-  "file3.jpg",
+  "https://www.nicepng.com/png/detail/72-729987_big-image-user-clipart-png.png",
   "password3",
   "password3"
 );
@@ -84,7 +84,7 @@ var user4 = new User(
   "Address4",
   "45678",
   "user4@example.com",
-  "file4.jpg",
+  "https://www.nicepng.com/png/detail/72-729987_big-image-user-clipart-png.png",
   "password4",
   "password4"
 );
@@ -97,7 +97,7 @@ var user5 = new User(
   "Address5",
   "56789",
   "user5@example.com",
-  "file5.jpg",
+  "https://www.nicepng.com/png/detail/72-729987_big-image-user-clipart-png.png",
   "password5",
   "password5"
 );
