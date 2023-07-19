@@ -1,0 +1,118 @@
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 255, 0.3);
+    text-align: center;
+
+  }
+  
+  .slide-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    position: relative;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .slide-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 255, 0.5);
+    color: #fff;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+  
+  .slide:hover .slide-content {
+    opacity: 1;
+  }
+  
+  .slide-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .slide-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .slide-price {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .slide-sale-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .slide-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 255, 0.7);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .slide-link:hover {
+    background-color: rgba(0, 0, 255, 0.472);
+}
+
+  .slider-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  .nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 255, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: rgba(0, 0, 255, 0.9);
+}
+  .slider-title {
+    color: white;
+    margin-top: 20px;
+    font-size: 30px;
+    width: 100%;
+    
+  }
+  

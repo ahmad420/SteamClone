@@ -20,11 +20,13 @@ function check(event) {
 
   if (userIsLoggedIn) {
     alert("User: Please log out before logging in with another account.");
+    window.location.href = "../pages/profile.html";
     return;
   }
 
   if (adminIsLoggedIn) {
     alert("Admin: Please log out before logging in with another account.");
+    window.location.href = "../pages/admin.html";
     return;
   }
 
