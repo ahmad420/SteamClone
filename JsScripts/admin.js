@@ -119,9 +119,7 @@ function userShow(foo) {
     document.getElementById("userLastName").textContent =
       users[index].userLastName;
     document.getElementById("pw").textContent = users[index].pw;
-    document.getElementById("Name1").textContent = users[index].userName;
     document.getElementById("Email").textContent = users[index].email;
-    document.getElementById("Email1").textContent = users[index].email;
     document.getElementById("DateOfBirth").textContent =
       users[index].DateOfBirth;
     document.getElementById("StreetAddress").textContent =
