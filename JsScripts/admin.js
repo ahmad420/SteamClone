@@ -153,6 +153,7 @@ function saveDetails(foo) {
       index = i;
       break;
     }
+    window.location.href = "../pages/admin.html";
   }
 
   var userName = document.getElementById("Name").innerHTML;

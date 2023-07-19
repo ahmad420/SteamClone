@@ -27,6 +27,11 @@ addItemForm.addEventListener("submit", function (event) {
   const category = document.getElementById("item-category").value;
   const image = document.getElementById("item-image").value;
 
+  // Validate the input values
+  if (!validateInputs(name, price, category, image)) {
+    return; // Stop execution if validation fails
+  }
+
   // Create a new item object
   const newItem = {
     id: itemsData.length + 1,
@@ -42,6 +47,8 @@ addItemForm.addEventListener("submit", function (event) {
   // Save the updated itemsData in local storage
   localStorage.setItem("itemsData", JSON.stringify(itemsData));
   alert("Added to the store");
+  window.location.href = "admin.html";
+
   // Reset the form inputs
   addItemForm.reset();
 });
@@ -52,4 +59,28 @@ function checkAuthenticationadmin() {
   if (!isAuthenticatedadmin || isAuthenticatedadmin !== "true") {
     window.location.href = "login.html";
   }
+}
+
+function validateInputs(name, price, category, image) {
+  if (name.trim() === "") {
+    alert("Please enter the item name.");
+    return false;
+  }
+
+  if (isNaN(price) || price <= 0) {
+    alert("Please enter a valid positive price for the item.");
+    return false;
+  }
+
+  if (category.trim() === "") {
+    alert("Please select a category for the item.");
+    return false;
+  }
+
+  if (image.trim() === "") {
+    alert("Please enter the image URL for the item.");
+    return false;
+  }
+
+  return true;
 }
