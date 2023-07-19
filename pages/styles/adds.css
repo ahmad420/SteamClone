@@ -1,18 +1,21 @@
 .slider {
     position: relative;
-    width: 100%;
+    max-width:80vw;
     height: 400px;
     overflow: hidden;
-    background-color: rgba(0, 0, 255, 0.3);
+    background-color:#1b2027;
     text-align: center;
 
   }
   
-  .slide-container {
+  .slide-container1{
     display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease;
+    margin: 0 auto;
+
   }
   
   .slide {
@@ -36,7 +39,7 @@
     left: 0;
     width: 100%;
     padding: 20px;
-    background-color: rgba(0, 0, 255, 0.5);
+    background-color:rgba(36, 56, 81, 0.5));
     color: #fff;
     transition: opacity 0.5s ease;
     opacity: 0;
@@ -114,5 +117,14 @@
     font-size: 30px;
     width: 100%;
     
+  }
+  
+  @media screen and (max-width: 768px) {
+    .slider-container {
+      max-width: 90%;
+      margin: 0 auto;
+      padding: 0 10px;
+
+    }
   }
   
