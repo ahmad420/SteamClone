@@ -144,13 +144,19 @@ describe("General purchase process", function () {
       const cvv = document.getElementById("pagarTarjetaCVV").value.trim();
 
       // Assume all validation checks pass
+      const allValidationsPass =
+        cardholder !== "" &&
+        cardNumber !== "" &&
+        /^\d{4}\d{4}\d{4}\d{4}$/.test(cardNumber) &&
+        expMonth !== "" &&
+        expYear !== "" &&
+        /^\d{2}$/.test(expMonth) &&
+        /^\d{4}$/.test(expYear) &&
+        cvv !== "" &&
+        /^\d{3}$/.test(cvv);
 
       // Assert
-      expect(cardholder).toBeTruthy();
-      expect(cardNumber).toBeTruthy();
-      expect(expMonth).toBeTruthy();
-      expect(expYear).toBeTruthy();
-      expect(cvv).toBeTruthy();
+      expect(allValidationsPass).toBe(true); // Check if all validation checks pass
 
       // Submit the form
       form.submit();
